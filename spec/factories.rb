@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :developer do
-    github_username { Faker::Internet.user_name }
+    github_username { Faker::Name.last_name }
 
     factory :developer_with_projects do
       after(:create) do |developer|

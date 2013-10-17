@@ -1,6 +1,6 @@
-class DevelopersController <ApplicationController
+class DevelopersController < ApplicationController
   def show
-    @developer = Developer.find(params[:id])
+    @developer = Developer.find_by github_username: params[:id]
     @projects = @developer.projects
   end
 end
