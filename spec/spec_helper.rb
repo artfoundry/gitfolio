@@ -12,8 +12,9 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 OmniAuth.config.test_mode = true
 OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-    :provider => 'github',
-    :uid => '123545'
+    "provider" => 'github',
+    "uid" => '123545',
+    "extra" => {"raw_info" => {"login" => "test_username"}}
   })
 RSpec.configure do |config|
   # ## Mock Framework
