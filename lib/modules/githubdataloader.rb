@@ -31,12 +31,16 @@ module GitHubDataLoader
     }
   end
 
-  def make_api_call(uri)
+  def make_api_call(uri_string)
     #makes a single api call.
-    response = Net::HTTP.get_response(URI.parse(uri))
-    repositories = JSON.parse(response.body)
+
+    uri = URI.parse(uri_string)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+
+    request = Net::HTTP::Get.new(uri.request_uri)
+    JSON.parse(http.request(request).body)
+
   end
 
 end
-
-
