@@ -16,10 +16,10 @@
 //= require turbolinks
 //= require_tree .
 
-<!-- Check for Zepto support, load jQuery if necessary -->
-document.write('<script src=/js/vendor/'
-  + ('__proto__' in {} ? 'zepto' : 'jquery')
-  + '.js><\/script>');
+// Check for Zepto support, load jQuery if necessary
+// document.write('<script src=/js/vendor/'
+//   + ('__proto__' in {} ? 'zepto' : 'jquery')
+//   + '.js><\/script>');
 
 $(document).foundation();
 
