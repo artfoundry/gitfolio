@@ -1,6 +1,6 @@
-YOUR_APP_ID = 'e75d4bc3c02a9d489fac'
-YOUR_APP_SECRET = 'eab7d6e8bced46c6fe6ec4ab9f47c679cb267a05'
+APP_ID = '2f457624a6b5fbae8c03'
+APP_SECRET = '8efff932356f70adbc75a1be60152fc591b5ad29'
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :github, YOUR_APP_ID, YOUR_APP_SECRET
+  provider :github, APP_ID, APP_SECRET
 end
