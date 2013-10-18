@@ -179,6 +179,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 1.2)
   jquery-rails
+  json
   omniauth
   omniauth-github
   pg

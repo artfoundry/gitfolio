@@ -22,6 +22,8 @@ gem 'rails', '4.0.0'
 # Use Postgres as the database for Active Record
 gem 'pg'
 
+gem 'json'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

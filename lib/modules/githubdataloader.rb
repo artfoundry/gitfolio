@@ -1,6 +1,6 @@
 require 'uri'
 require 'net/http'
-require 'JSON'
+require 'json'
 
 module GitHubDataLoader
 
