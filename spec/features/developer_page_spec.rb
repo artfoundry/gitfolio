@@ -9,10 +9,4 @@ feature 'user page' do
     expect(page).to have_content(developer.projects.first.title)
   end
 
-  scenario "page should display a user's repositories" do
-    developer = Developer.create(github_username: 'nscricco')
-    visit developer_path(developer)
-    expect(page).to have_content('quote_racer')
-    developer.destroy
-  end
 end
