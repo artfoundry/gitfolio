@@ -1,4 +1,12 @@
-<% @repositories do |repo| %>
-<a href=<%=repo[:url]%> ><%= repo[:name] %></a><br>
-<%= repo[:description] %>
+<ul>
+<% @repositories.each do |repo| %>
+  <li>
+    <a href=<%=repo[:url]%> ><%= repo[:name] %></a><br>
+    <% if repo[:description] != "" %>
+      <%= repo[:description] %>
+    <% else %>
+      <em>no descrption given</em>
+    <% end %>
+  </li>
 <% end %>
+</ul>
