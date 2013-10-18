@@ -13,15 +13,23 @@ describe DevelopersController do
   describe "POST developer#repositories" do
     before(:each) do
       @developer = Developer.create(github_username: 'nscricco')
+      post :repositories, {id: @developer.github_username}
     end
 
     after(:each) do
       @developer.destroy
     end
 
-    it "should show a developer's repositories" do
-      post :repositories, {id: @developer.github_username}
+    it "should return an array" do
+      expect(assigns(:repositories)).to be_a(Array)
+    end
+
+    it "should return an array of user's repositories scraped from github" do
       expect(assigns(:repositories).map {|repo| repo[:name]}).to include('quote_racer')
+    end
+
+    it "should render a JSON object containing the user's repositories" do
+
     end
 
   end
