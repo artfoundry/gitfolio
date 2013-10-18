@@ -13,7 +13,7 @@ module GitHubDataLoader
     #returns an array of hashes, each pertaining to a single repository
     repositories.map do |repo_hash|
       {name: repo_hash["name"],
-        url: repo_hash["url"],
+        url: repo_hash["html_url"],
         description: repo_hash["description"]}
     end
 
