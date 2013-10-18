@@ -1,0 +1,4 @@
+<% @repositories do |repo| %>
+<a href=<%=repo[:url]%> ><%= repo[:name] %></a><br>
+<%= repo[:description] %>
+<% end %>
