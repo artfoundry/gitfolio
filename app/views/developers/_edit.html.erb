@@ -1,14 +1,18 @@
 <div class="panel">
   <div class="row">
-    <a href="#" data-reveal-id="projectModal" class="button">Add/Edit Project</a>
+    <a href="#" data-reveal-id="projectAddModal" class="button">Add Project</a>
     <%= render "add_project" %>
   </div>
   <div class="row">
     <div class="large-12 columns">
       <h4>My Projects</h4>
+      <div class="row collapse">
       <% @projects.each do |project| %>
+      <div class="small-4 large-12 columns">
         <div class="project"><%= project.title %></div>
-      <% end %>
+          <a class="button">Edit Project</a>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
