@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+ *= require foundation_and_overrides
+
+
+$include-html-section-classes: $include-html-classes;
+
+/* These style the titles */
+$section-title-color: #ccf;
+$section-title-color-active: #00ffff;
+$section-title-bg: #efefef;
+$section-title-bg-active: darken($section-title-bg, $section-function-factor);
+$section-title-bg-active-tabs: #fff;
+$section-title-bg-hover: darken($section-title-bg, $section-function-factor / 2);
+
+/* Control the color of the background and some size options */
+$section-content-bg: #ccf;
+$section-vertical-nav-min-width: em-calc(200);
+$section-vertical-tabs-title-width: em-calc(200);
+$section-bottom-margin: em-calc(20);
+
+$title-selector: ".title";
+$content-selector: ".content";
+$active-region-selector: ".active";
