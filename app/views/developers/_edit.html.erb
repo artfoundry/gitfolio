@@ -1,47 +1,16 @@
-<a href="#" data-reveal-id="projectModal" class="button">Add Project</a>
-
-<div id="projectModal" class="reveal-modal">
-  <form>
-    <fieldset>
-      <legend>Project</legend>
-
-      <div class="row">
-        <div class="large-12 columns">
-          <label>Input Label</label>
-          <input type="text" placeholder="large-12.columns">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="large-4 columns">
-          <label>Input Label</label>
-          <input type="text" placeholder="large-4.columns">
-        </div>
-        <div class="large-4 columns">
-          <label>Input Label</label>
-          <input type="text" placeholder="large-4.columns">
-        </div>
-        <div class="large-4 columns">
-          <div class="row collapse">
-            <label>Input Label</label>
-            <div class="small-9 columns">
-              <input type="text" placeholder="small-9.columns">
-            </div>
-            <div class="small-3 columns">
-              <span class="postfix">.com</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="large-12 columns">
-          <label>Textarea Label</label>
-          <textarea placeholder="small-12.columns"></textarea>
-        </div>
-      </div>
-
-    </fieldset>
-  </form>
-  <a class="close-reveal-modal">&#215;</a>
+<div class="panel">
+  <div class="row">
+    <a href="#" data-reveal-id="projectModal" class="button">Add/Edit Project</a>
+    <%= render "add_project" %>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h4>My Projects</h4>
+      <% @projects.each do |project| %>
+        <div class="project"><%= project.title %></div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+
