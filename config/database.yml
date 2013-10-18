@@ -1,14 +1,10 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+# Postgres
 development:
   adapter: postgresql
   encoding: unicode
   database: gitfolio_development
   pool: 5
-  username: gitfolio
+  username: postgres
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -19,7 +15,7 @@ test:
   encoding: unicode
   database: gitfolio_test
   pool: 5
-  username: gitfolio
+  username: postgres
   password:
 
 production:
@@ -27,5 +23,5 @@ production:
   encoding: unicode
   database: gitfolio_production
   pool: 5
-  username: gitfolio
+  username: postgres
   password:
