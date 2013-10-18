@@ -10,9 +10,5 @@ feature 'user page' do
   end
 
   scenario 'page should allow users to select repos and turn them into projects' do
-    developer = Developer.create(github_username: 'nscricco')
-    visit developer_path(developer)
-    expect(page).to have_content('quote_racer')
-    developer.destroy
   end
 end
