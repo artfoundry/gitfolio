@@ -3,7 +3,7 @@ require "modules/githubdataloader.rb"
 describe "GitHubDataLoader" do
   user = 'raorao'
   describe "return_all_repos" do
-    it "should return an array of has objects, each describing a repository" do
+    it "should return an array of hash objects, each describing a repository" do
       repositories = GitHubDataLoader.return_all_repos(user)
       expect(repositories).to be_a(Array)
       expect(repositories[0]).to be_a(Hash)
