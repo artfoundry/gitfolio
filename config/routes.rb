@@ -3,6 +3,8 @@ Gitfolio::Application.routes.draw do
   root to: "static#home"
   resources :developers, only: [:show]
 
+ get '/auth/:provider/callback', :to => 'sessions#create'
+ get '/auth/failure', :to => 'sessions#failure'
   # get   '/login', :to => 'sessions#new', :as => :login
   # match '/auth/:provider/callback', :to => 'sessions#create'
   # match '/auth/failure', :to => 'sessions#failure'
