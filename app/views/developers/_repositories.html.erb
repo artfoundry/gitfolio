@@ -7,6 +7,8 @@
     <% else %>
       <em>no descrption given</em>
     <% end %>
+    <br>
+    <%= button_to "Add to projects", project_from_repo_path(repo) %>
   </li>
 <% end %>
 </ul>

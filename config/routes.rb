@@ -1,8 +1,10 @@
 Gitfolio::Application.routes.draw do
 
   root to: "static#home"
+  # resources :projects
   resources :developers, only: [:show]
 
+  post '/project_from_repo', :to => 'projects#create_from_repo'
   post '/developers/repositories', :to => 'developers#repositories'
   get '/auth/:provider/callback', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'
