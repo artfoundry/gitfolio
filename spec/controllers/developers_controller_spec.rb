@@ -28,7 +28,8 @@ describe DevelopersController do
       expect(assigns(:repositories).map {|repo| repo[:name]}).to include('quote_racer')
     end
 
-    it "should render a JSON object containing the user's repositories" do
+    it "should render a JSON object containing the user's repositories array" do
+      expect(JSON.parse(response.body)).to be_a(Array)
 
     end
 
