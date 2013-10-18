@@ -12,5 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require_tree .
+
+<!-- Check for Zepto support, load jQuery if necessary -->
+document.write('<script src=/js/vendor/'
+  + ('__proto__' in {} ? 'zepto' : 'jquery')
+  + '.js><\/script>');
+
+$(document).foundation();
+
+// not sure if these are needed
+
+// $('#scope').foundation();
+// $(document).foundation('section', {deep_linking: true}, function (response) {
+//   console.log(response.errors);
+// });
