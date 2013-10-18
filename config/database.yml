@@ -4,7 +4,7 @@ development:
   encoding: unicode
   database: gitfolio_development
   pool: 5
-  username: postgres
+  username: 
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -15,7 +15,7 @@ test:
   encoding: unicode
   database: gitfolio_test
   pool: 5
-  username: postgres
+  username: 
   password:
 
 production:
@@ -23,5 +23,5 @@ production:
   encoding: unicode
   database: gitfolio_production
   pool: 5
-  username: postgres
+  username: 
   password:
