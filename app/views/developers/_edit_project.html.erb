@@ -1,4 +1,4 @@
-<div id="projectAddModal" class="reveal-modal">
+<div id="projectEditModal" class="reveal-modal">
   <form>
     <fieldset>
       <legend>Project</legend>
@@ -6,44 +6,39 @@
       <div class="row">
         <div class="large-4 columns">
           <label>Project name</label>
-          <%= text_field_tag 'title', nil, placeholder: 'Greatest project ever' %>
+          <input type="text" placeholder="<%=@projects[1].title%>">
         </div> <!-- large-4 col -->
         <div class="large-4 columns">
           <label>Project URL</label>
-          <%= text_field_tag 'url', nil, placeholder: 'www.gpe.com' %>
+          <input type="text" placeholder="<%=@projects[1].url%>">            
         </div> <!-- large-4 col -->
         <div class="large-4 columns">
           <label>Your role on the project</label>
-          <input type="text" placeholder="Supreme leader">
+          <input type="text" placeholder="<%#=@projects[1].role%>">
         </div> <!-- large-4 col -->
       </div> <!-- row -->
 
       <div class="row">
         <div class="large-12 columns">
           <label>Project Description</label>
-          <textarea placeholder="Greatest project description ever..."></textarea>
+          <textarea placeholder="<%=@projects[1].description%>"></textarea>
         </div><!-- large-12 col -->
       </div> <!-- row -->
 
       <div class="row">
         <div class="large-12 columns">
           <label>Collaborators</label>
-          <input type="text" placeholder="Github user names separated by commas"></textarea>
+          <input type="text" placeholder="<%#=@projects[1].collaborators%>"></textarea>
         </div><!-- large-12 col -->
       </div> <!-- row -->
 
       <div class="row">
         <div class="large-12 columns">
           <label>Sample code</label>
-          <textarea placeholder="Greatest code ever..."></textarea>       
+          <%#= render "code" %>
         </div><!-- large-12 col -->
       </div> <!-- row -->
     </fieldset>
   </form>
-  <div class="row">
-    <div class="large-12 columns">
-      <a href="#" class="button" >Add Project</a>
-    </div>
-  </div>
   <a class="close-reveal-modal">&#215;</a>
 </div> <!-- modal -->
