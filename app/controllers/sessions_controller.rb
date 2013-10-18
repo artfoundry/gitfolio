@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
     auth = Authorization.find_or_create(auth_hash)
     session[:developer_id] = auth.developer.id
 
-    render :text => "Welcome #{auth.developer.github_username}!"
+    render :text => auth_hash
+    # "Welcome #{auth.developer.github_username}!"
   end
 
   def destroy
