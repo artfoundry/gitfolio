@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20131018042811) do
     t.datetime "updated_at"
   end
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "developers", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
