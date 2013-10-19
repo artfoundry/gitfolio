@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019000157) do
+ActiveRecord::Schema.define(version: 20131019192447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20131019000157) do
     t.string   "github_username"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "github_avatar"
+    t.string   "github_url"
   end
 
   create_table "projects", force: true do |t|
