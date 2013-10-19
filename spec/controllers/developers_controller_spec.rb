@@ -3,9 +3,17 @@ require 'spec_helper'
 describe DevelopersController do
 
   describe "GET developer#show" do
-    let(:developer) {FactoryGirl.create(:developer)}
+    before(:each) do
+      @developer = Developer.create(github_username: 'nscricco')
+      post :repositories, {id: @developer.github_username}
+    end
+
+    after(:each) do
+      @developer.destroy
+    end
+
     it "assigns a developer with correct id" do
-      get :show, {id: developer.github_username}
+      get :show, {id: @developer.github_username}
       expect(assigns(:developer)).to be_a(Developer)
     end
   end
