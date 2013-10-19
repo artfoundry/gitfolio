@@ -3,6 +3,7 @@ include GitHubDataLoader
 TIGER_SWALLOWTAILS = File.read(__FILE__).split(/^__END__/, 2).last.lines.map(&:chomp).reject(&:empty?)
 tiger_info = TIGER_SWALLOWTAILS.map { |tiger| return_user_info(tiger) }
 tigers_with_info = TIGER_SWALLOWTAILS.zip(tiger_info)
+tiger_repos = TIGER_SWALLOWTAILS.map {|tiger| return_all_repos(tiger)}
 
 tigers_with_info.each do |tiger| 
   Developer.create(github_username: tiger[0],
@@ -11,6 +12,14 @@ tigers_with_info.each do |tiger|
     github_url: tiger[1][:github_url])
 end
 
+tiger_repos.each do |tiger|
+  tiger.each do |repo|
+  Project.create(title: repo[:name],
+    url: repo[:url],
+    description: repo[:description],
+    developer_id: (Developer.find_by github_username: repo[:owner]).id)
+  end
+end
 __END__
 MaxDavila
 brunops
