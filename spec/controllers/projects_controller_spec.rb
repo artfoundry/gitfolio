@@ -55,6 +55,10 @@ describe ProjectsController do
       expect(project.role).not_to eql(new_project.role)
     end
 
+    it "should redirect back to developer page" do
+      expect(response).to redirect_to(project.developer)
+    end
+
 
   end
 

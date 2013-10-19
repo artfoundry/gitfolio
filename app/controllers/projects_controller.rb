@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
 
     project.save
 
-    render nothing: true
+    redirect_to developer_path(project.developer)
 
   end
 
