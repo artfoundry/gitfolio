@@ -28,4 +28,23 @@ describe ProjectsController do
 
   end
 
+  describe "PATCH projects#update" do
+    let(:project) { FactoryGirl.create(:project) }
+    let(:new_project) { FactoryGirl.build(:project) }
+    before(:each) do
+      patch :update, {id: project.id,
+        :project => {
+          title: new_project.title,
+          url: new_project.url
+        }
+      }
+      project.reload
+    end
+    it "should update a project's information" do
+      expect(project.title).to eql(new_project.title)
+      expect(project.developer_id).not_to eql(new_project.developer_id)
+    end
+
+  end
+
 end

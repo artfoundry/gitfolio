@@ -25,6 +25,19 @@ class ProjectsController < ApplicationController
     redirect_to developer_path(developer)
   end
 
+  def update
+
+    p project = Project.find(params[:id])
+
+    project.attributes = valid_params(params)
+
+    project.save
+
+    render nothing: true
+
+  end
+
+
   private
 
   def valid_params(params)
