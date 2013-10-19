@@ -2,6 +2,7 @@ Gitfolio::Application.routes.draw do
 
   root to: "static#home"
   resources :developers, only: [:show]
+  resources :projects, only: [:create]
 
  get '/auth/:provider/callback', :to => 'sessions#create'
  get '/logout', :to => 'sessions#destroy'

@@ -1,0 +1,38 @@
+<div id="projectAddModal" class="reveal-modal">
+  <%= form_for :project, url: projects_path, method: :post do |f| %>
+    <fieldset>
+      <legend>Project</legend>
+
+      <div class="row">
+        <div class="large-4 columns">
+          <%= f.label :title, 'Project Name' %>
+          <%= f.text_field :title %>
+        </div> <!-- large-4 col -->
+        <div class="large-4 columns">
+          <%= f.label :url, 'Project URL' %>
+          <%= f.text_field :url %>
+        </div> <!-- large-4 col -->
+        <div class="large-4 columns">
+          <%= f.label :role, 'Your role on the project' %>
+          <%= f.text_field :role %>
+        </div> <!-- large-4 col -->
+      </div> <!-- row -->
+
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.label :description, 'Project Description' %>
+          <%= f.text_area :description %>
+        </div><!-- large-12 col -->
+      </div> <!-- row -->
+
+    </fieldset>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.submit "Add Project" %>
+    </div>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+  <% end %> <!-- form_for -->
+</div>
+
+
