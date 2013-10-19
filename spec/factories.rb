@@ -13,7 +13,10 @@ FactoryGirl.define do
   end
 
   factory :project do
-    title { Faker::Company.name }
+    title { Faker::Company.catch_phrase }
+    url {Faker::Internet.url }
+    role { Faker::Company.bs}
+    description {Faker::Lorem.paragraph}
     developer
   end
 
