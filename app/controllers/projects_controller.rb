@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
 
   def update
 
-    p project = Project.find(params[:id])
+    project = Project.find(params[:id])
 
     project.attributes = valid_params(params)
 
