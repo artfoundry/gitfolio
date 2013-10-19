@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  height: 300px;
+}
+
+.vcenter {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin: auto;
+}
+
+.panel {
+  box-shadow: 10px 10px 10px #888888;
+}

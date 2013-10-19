@@ -1,6 +1,17 @@
-<h1>Home Page</h1>
-<% if session[:developer_id] == nil %>
-	<%= render partial: 'sessions/sign_in' %>
-<% else %>
-	<%= render partial: 'sessions/sign_out' %>
-<% end %>
+<div class="container">
+  <div class="vcenter">
+    <div class="row">
+      <div class="small-8 small-centered columns">
+        <div class="panel">
+          <h1>Welcome to Gitfolio</h1>
+          <h3>Please log in with your Github account</h3>
+          <% if session[:developer_id] == nil %>
+          	<%= render partial: 'sessions/sign_in' %>
+          <% else %>
+          	<%= render partial: 'sessions/sign_out' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
