@@ -31,19 +31,30 @@ describe ProjectsController do
   describe "PATCH projects#update" do
     let(:project) { FactoryGirl.create(:project) }
     let(:new_project) { FactoryGirl.build(:project) }
+
     before(:each) do
       patch :update, {id: project.id,
         :project => {
           title: new_project.title,
-          url: new_project.url
+          url: new_project.url,
+          developer_id: new_project.developer_id
         }
       }
       project.reload
     end
+
     it "should update a project's information" do
       expect(project.title).to eql(new_project.title)
-      expect(project.developer_id).not_to eql(new_project.developer_id)
     end
+
+    it "should have not be able to edit a project's developer ID" do
+      expect(project.developer).not_to eql(new_project.developer)
+    end
+
+    it "should not change unspecified fields" do
+      expect(project.role).not_to eql(new_project.role)
+    end
+
 
   end
 
