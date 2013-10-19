@@ -41,8 +41,10 @@ module GitHubDataLoader
     http.use_ssl = true
 
     request = Net::HTTP::Get.new(uri.request_uri)
+    request.basic_auth("robotdinosaur",'password2')
     JSON.parse(http.request(request).body)
 
   end
 
 end
+

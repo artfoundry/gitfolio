@@ -1,2 +1,6 @@
 <h1>Home Page</h1>
-<%= render partial: 'sessions/sign_in' %>
+<% if session[:developer_id] == nil %>
+	<%= render partial: 'sessions/sign_in' %>
+<% else %>
+	<%= render partial: 'sessions/sign_out' %>
+<% end %>
