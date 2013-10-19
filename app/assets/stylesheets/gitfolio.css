@@ -11,6 +11,17 @@
   margin: auto;
 }
 
-.panel {
+.pro_container {
+  position: relative;
+}
+
+.pro_vcenter {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  margin: auto;
+}
+
+.shadowpanel {
   box-shadow: 10px 10px 10px #888888;
 }
