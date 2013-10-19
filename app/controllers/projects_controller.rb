@@ -5,12 +5,12 @@ class ProjectsController < ApplicationController
     developer = Developer.find_by github_username: params[:owner]
 
     developer.projects.create(
-      title: params[:title],
+      title: params[:name],
       url: params[:url],
       description: params[:description]
       )
 
-    render nothing: true
+    redirect_to developer_path(developer)
   end
 
 end
