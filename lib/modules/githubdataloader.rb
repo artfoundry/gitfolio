@@ -14,7 +14,9 @@ module GitHubDataLoader
     repositories.map do |repo_hash|
       {name: repo_hash["name"],
         url: repo_hash["html_url"],
-        description: repo_hash["description"]}
+        description: repo_hash["description"],
+        owner: repo_hash["owner"]["login"]
+      }
     end
 
   end
