@@ -4,7 +4,7 @@ describe DevelopersController do
 
   describe "GET developer#show" do
     let(:developer) {FactoryGirl.create(:developer)}
-    xit "assigns a developer with correct id" do
+    it "assigns a developer with correct id" do
       get :show, {id: developer.github_username}
       expect(assigns(:developer)).to be_a(Developer)
     end
@@ -20,15 +20,15 @@ describe DevelopersController do
       @developer.destroy
     end
 
-    xit "should return an array" do
+    it "should return an array" do
       expect(assigns(:repositories)).to be_a(Array)
     end
 
-    xit "should return an array of user's repositories scraped from github" do
+    it "should return an array of user's repositories scraped from github" do
       expect(assigns(:repositories).map {|repo| repo[:name]}).to include('quote_racer')
     end
 
-    xit "should render a JSON object containing the user's repositories array" do
+    it "should render a JSON object containing the user's repositories array" do
       expect(JSON.parse(response.body)).to be_a(Array)
 
     end
