@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
     auth_hash = request.env['omniauth.auth']
 
     auth = Authorization.find_or_create(auth_hash)
-    session[:developer_id] = auth.developer.id
+    developer = auth.developer
+    session[:developer_id] = developer.id
 
-    render :text => auth_hash
-    # "Welcome #{auth.developer.github_username}!"
+    redirect_to developer_path(developer)
   end
 
   def destroy
