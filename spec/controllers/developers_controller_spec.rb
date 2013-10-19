@@ -3,6 +3,7 @@ require 'spec_helper'
 describe DevelopersController do
 
   describe "GET developer#show" do
+
     before(:each) do
       @developer = Developer.create(github_username: 'nscricco')
       post :repositories, {id: @developer.github_username}
