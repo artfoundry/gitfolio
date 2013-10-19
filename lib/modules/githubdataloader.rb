@@ -13,8 +13,10 @@ module GitHubDataLoader
     #returns an array of hashes, each pertaining to a single repository
     repositories.map do |repo_hash|
       {name: repo_hash["name"],
-        url: repo_hash["url"],
-        description: repo_hash["description"]}
+        url: repo_hash["html_url"],
+        description: repo_hash["description"],
+        owner: repo_hash["owner"]["login"]
+      }
     end
 
   end
@@ -39,8 +41,10 @@ module GitHubDataLoader
     http.use_ssl = true
 
     request = Net::HTTP::Get.new(uri.request_uri)
+    request.basic_auth("robotdinosaur",'password2')
     JSON.parse(http.request(request).body)
 
   end
 
 end
+
