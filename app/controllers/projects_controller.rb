@@ -9,13 +9,18 @@ class ProjectsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
 
+  def destroy
+    project = Project.find(params[:id])
+    Project.destroy(project)
+
+    redirect_to developer_path(project.developer)
   end
 
   def create_from_repo
 
     developer = Developer.find_by github_username: params[:owner]
-
     developer.projects.create(
       title: params[:name],
       url: params[:url],
@@ -26,15 +31,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
-
     project = Project.find(params[:id])
-
     project.attributes = valid_params(params)
-
     project.save
 
     redirect_to developer_path(project.developer)
-
   end
 
 

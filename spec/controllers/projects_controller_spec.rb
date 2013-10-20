@@ -62,4 +62,18 @@ describe ProjectsController do
 
   end
 
+  describe  "DELETE projects#destroy" do
+    project = FactoryGirl.create(:project)
+
+    it "should delete the specified project object" do
+      delete :destroy, { id: project.id }
+      expect(Project.exists?(project.id)).to be_false
+    end
+
+    it "should redirect to developer page" do
+      delete :destroy, { id: project.id }
+      expect(response).to redirect_to(developer_path(project.developer))
+    end
+  end
+
 end
