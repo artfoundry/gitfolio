@@ -44,22 +44,30 @@ describe DevelopersController do
 
   end
 
-  describe "GET developer#edit" do
-      before(:each) do
-      @developer = Developer.create(github_username: 'nscricco')
-    end
-
-    after(:each) do
-      @developer.destroy
-    end
-    it "renders a page for adding profile information" do
-      get :edit, {id: @developer.github_username}
-
-      expect(response).to render_template("_edit_profile")
-    end
-  end
-
   describe "PATCH developer#update" do
-    it "updates developer with provided profile information"
+    let(:developer) {FactoryGirl.create(:developer)}
+    let(:new_developer) {Developer.new(name: "Testy Testington",
+                                       email: "test@example.com",
+                                       location: "SF",
+                                       profession: "QA",
+                                       github_username: developer.github_username)}
+     before(:each) do
+      patch :update, {id: developer.github_username,
+        :developer => {
+          name: new_developer.name,
+          email: new_developer.email,
+          location: new_developer.location,
+          profession: new_developer.profession
+        }
+      }
+      developer.reload
+    end
+      it "updates a developer's information" do
+      expect(developer.name).to eql(new_developer.name)
+    end
+
+    it "redirects to developer page" do
+      expect(response).to redirect_to(developer)
+    end
   end
 end
