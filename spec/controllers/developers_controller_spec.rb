@@ -43,4 +43,23 @@ describe DevelopersController do
     end
 
   end
+
+  describe "GET developer#edit" do
+      before(:each) do
+      @developer = Developer.create(github_username: 'nscricco')
+    end
+
+    after(:each) do
+      @developer.destroy
+    end
+    it "renders a page for adding profile information" do
+      get :edit, {id: @developer.github_username}
+
+      expect(response).to render_template("_edit_profile")
+    end
+  end
+
+  describe "PATCH developer#update" do
+    it "updates developer with provided profile information"
+  end
 end
