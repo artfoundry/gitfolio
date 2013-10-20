@@ -2,7 +2,7 @@ Gitfolio::Application.routes.draw do
 
   root to: "static#home"
   # resources :projects
-  resources :developers, only: [:show]
+  resources :developers, only: [:show, :edit]
   resources :projects, only: [:create, :update]
 
   post '/project_from_repo', :to => 'projects#create_from_repo'
