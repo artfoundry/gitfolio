@@ -21,14 +21,21 @@ module GitHubDataLoader
 
   end
 
+  def return_all_files(username)
+
+    return_all_gists(username) + return_all_repos(username)
+
+  end
+
   def return_all_gists(username)
     uri_string = "https://api.github.com/users/#{username}/gists"
     gists = make_api_call(uri_string)
 
     gists.map do |gist_hash|
-      {url: gist_hash["url"],
+      {name: "gist " + gist_hash["id"],
+        url: gist_hash["url"],
         description: gist_hash["description"],
-        owner: gist_hash["user"]
+        owner: gist_hash["user"]["login"]
       }
     end
   end
@@ -59,3 +66,5 @@ module GitHubDataLoader
   end
 
 end
+
+p GitHubDataLoader.return_all_files('raorao')
