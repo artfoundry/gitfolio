@@ -3,7 +3,7 @@
   <div class="pro_vcenter">
     <div class="row">
       <div class="small-8 large-10 small-centered columns">
-        <div class="shadowpanel">
+        <div class="shadow-panel">
           <%= render partial: 'public' %>
         </div> <!-- shadowpanel -->
       </div> <!-- small-8 large-10 -->
@@ -15,7 +15,7 @@
   <div class="pro_vcenter">
     <div class="row">
       <div class="small-8 large-10 small-centered columns">
-        <div class="shadowpanel">
+        <div class="shadow-panel">
           <!-- Only show public tab if the user is logged in -->
           <% if session[:developer_id] == @developer.id %>
           <div class="section-container tabs" data-section="tabs">
@@ -23,32 +23,37 @@
             <!-- Public tab -->
             <section class="active">
               <p class="title" data-section-title><a href="#panel1">Public</a></p>
-              <%= render partial: 'public' %>
+              <div class="content" data-section-content>
+                <%= render partial: 'public' %>
+              </div>
             </section>
             <!-- End Public tab -->
 
-            <!-- Edit tab -->
+            <!-- Edit Projects tab -->
             <section>
-              <p class="title" data-section-title><a href="#panel2">Edit</a></p>
+              <p class="title" data-section-title><a href="#panel2">Projects</a></p>
               <div class="content" data-section-content>
                 <%= render partial: 'edit_projects' %>
               </div>
             </section>
-            <!-- End Edit tab -->
+            <!-- End Edit Projects tab -->
 
+            <!-- Edit Profile tab -->
             <section>
-              <p class="title" data-section-title><a data-reveal-id="editDeveloperModal">Profile</a></p>
+              <p class="title" data-section-title><a href="#panel3">Profile</a></p>
+              <div class="content" data-section-content>
                 <%= render partial: 'edit_profile' %>
+              </div>
             </section>
+            <!-- End Edit Profile tab -->
 
             <!-- Start Logout Tab -->
             <section>
-              <p class="title" data-section-title><%= link_to "Logout", logout_path %> </p>
+              <p class="title" data-section-title><%= link_to "Logout", logout_path %></p>
             </section>
             <!-- End Logout Tab -->
-
-          <% end %>
           </div> <!-- section-container tabs -->
+          <% end %> <!-- if session -->
         </div> <!-- shadowpanel -->
       </div> <!-- small-8 large-10 -->
     </div> <!-- row -->
