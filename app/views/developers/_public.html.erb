@@ -3,9 +3,17 @@
     <% @projects.each do |project| %>
       <li class= <%= "project-id-#{project.id}" %> >
         <h1><a href=<%= project.url %> /><%= project.title %></a></h1>
-        <img src="http://foundation.zurb.com/docs/img/demos/orbit/demo1.jpg" />
+
+        <% if project.code_snippet %>
+          <pre class="prettyprint"><%= project.code_snippet %></pre>
+        <% else %>
+          <img src="http://foundation.zurb.com/docs/img/demos/orbit/demo1.jpg" />
+        <% end %>
         <div class="orbit-caption"><%= project.description %></div>
       </li>
     <% end %>
   </ul>
 </div> <!-- /panel -->
+
+
+
