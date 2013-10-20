@@ -66,5 +66,3 @@ module GitHubDataLoader
   end
 
 end
-
-p GitHubDataLoader.return_all_files('raorao')

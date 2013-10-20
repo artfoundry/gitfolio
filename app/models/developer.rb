@@ -12,7 +12,7 @@ class Developer < ActiveRecord::Base
   end
 
   def all_repositories
-    return_all_repos(github_username)
+    return_all_files(github_username)
   end
 
   def github_user_info

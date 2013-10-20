@@ -18,4 +18,22 @@ describe "GitHubDataLoader" do
       expect(user_info[:github_email]).to eql("savinirs@gmail.com")
     end
   end
+
+  describe "return_all_gists" do
+    it "should return an array of hash objects, each describing a gist" do
+      gists = GitHubDataLoader.return_all_gists(user)
+      expect(gists).to be_a(Array)
+      expect(gists[0]).to be_a(Hash)
+      expect(gists[0].keys).to include(:name)
+    end
+  end
+
+  describe "return_all_files" do
+    it "should return an array of hash objects, which include both gists and hashes" do
+      files = GitHubDataLoader.return_all_files(user)
+      expect(files).to be_a(Array)
+      expect(files[0]).to be_a(Hash)
+      expect(files[0].keys).to include(:name)
+    end
+  end
 end
