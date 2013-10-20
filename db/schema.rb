@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20131020191639) do
     t.string   "name"
     t.string   "location"
     t.string   "profession"
-    t.text     "code_snippet"
   end
 
   create_table "projects", force: true do |t|
@@ -45,6 +44,7 @@ ActiveRecord::Schema.define(version: 20131020191639) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
+    t.text     "code_snippet"
   end
 
 end
