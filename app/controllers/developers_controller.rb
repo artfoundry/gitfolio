@@ -6,11 +6,6 @@ class DevelopersController < ApplicationController
     @repositories = @developer.return_all_repos(params[:id])
   end
 
-  def edit
-    developer = Developer.find_by github_username: params[:id]
-    render :partial => "edit_profile"
-  end
-
   def repositories
     developer = Developer.find_by github_username: params[:id]
     @repositories = developer.return_all_repos(params[:id])
