@@ -37,15 +37,15 @@
             <!-- End Edit tab -->
 
             <section>
-              <p class="title" data-section-title><a href="#panel2">Profile</a></p>
-              <div class="content" data-section-content>
+              <p class="title" data-section-title><a data-reveal-id="editDeveloperModal">Profile</a></p>
                 <%= render partial: 'edit_profile' %>
-              </div>
             </section>
 
+            <!-- Start Logout Tab -->
             <section>
               <p class="title" data-section-title><%= link_to "Logout", logout_path %> </p>
             </section>
+            <!-- End Logout Tab -->
 
           <% end %>
           </div> <!-- section-container tabs -->
