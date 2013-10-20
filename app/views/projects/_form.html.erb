@@ -42,7 +42,7 @@
       </div>
       <% if project.id %>
         <div class="small-4 small-offset-4 columns">
-          <%= f.submit "Delete Project", class: "button" %>
+          <%= button_to "Delete Project", project_path(project.id), method: :delete, class: "button" %>
         </div>
       <% end %>
     </div>
