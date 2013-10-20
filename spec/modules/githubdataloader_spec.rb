@@ -36,4 +36,11 @@ describe "GitHubDataLoader" do
       expect(files[0].keys).to include(:name)
     end
   end
+
+  describe "return_file_content" do
+    it "returns a string " do
+      file_content = GitHubDataLoader.return_file_content("dmill", "gitfolio", "spec/modules/githubdataloader_spec.rb")
+      expect(file_content).to eq(File.read(__FILE__))
+    end
+  end
 end
