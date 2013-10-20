@@ -6,11 +6,8 @@ class SessionsController < ApplicationController
     auth = Authorization.find_or_create(auth_hash)
     developer = auth.developer
     session[:developer_id] = developer.id
-    if authorization_count != Authorization.count
-      redirect_to edit_developer_path(developer)
-    else
-      redirect_to developer_path(developer)
-    end
+    authorization_count != Authorization.count ? @new_user = true : @new_user = false
+    redirect_to developer_path(developer)
   end
 
   def destroy
