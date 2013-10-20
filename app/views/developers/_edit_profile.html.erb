@@ -1,0 +1,36 @@
+
+<a href="#" data-reveal-id="editDeveloperModal" class="button">Edit Profile</a>
+<!-- Project form modal -->
+<div id="editDeveloperModal" class="reveal-modal">
+  <%= form_for @developer do |f| %>
+    <fieldset>
+      <legend>Developer</legend>
+      <div class="row">
+        <div class="large-4 columns">
+          <%= f.label :name, 'Name' %>
+          <%= f.text_field :name %>
+        </div> <!-- /large-4 col -->
+        <div class="large-4 columns">
+          <%= f.label :email, 'Email' %>
+          <%= f.text_field :email %>
+        </div> <!-- /large-4 col -->
+        <div class="large-4 columns">
+          <%= f.label :location, 'Location' %>
+          <%= f.text_field :location %>
+        </div> <!-- /large-4 col -->
+        <div class="large-4 columns">
+          <%= f.label :profession, 'Profession' %>
+          <%= f.text_field :profession %>
+        </div> <!-- /large-4 col -->
+      </div> <!-- /row -->
+    </fieldset>
+  <!-- nav buttons -->
+    <div class="row">
+      <div class="small-4 columns">
+        <%= f.submit "Submit", class: "button" %>
+      </div>
+    </div>
+    <a class="close-reveal-modal">&#215;</a>
+  <% end %> <!-- /form_for -->
+</div>
+
