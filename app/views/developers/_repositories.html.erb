@@ -1,14 +1,15 @@
-<ul>
 <% @repositories.each do |repo| %>
-  <li>
-    <a href=<%=repo[:url]%> ><%= repo[:name] %></a><br>
-    <% if repo[:description] != "" %>
-      <%= repo[:description] %>
-    <% else %>
-      <em>no descrption given</em>
-    <% end %>
-    <br>
-    <%= button_to "Add to projects", project_from_repo_path(repo) %>
-  </li>
+  <div class="row">
+    <div class="small-8 columns">
+      <a href=<%=repo[:url]%> ><%= repo[:name] %></a><br>
+      <% if repo[:description] != "" %>
+        <%= repo[:description] %>
+      <% else %>
+        <em>no descrption given</em>
+      <% end %>
+    </div>
+    <div class="small-4 columns">
+      <%= button_to "Add to projects", project_from_repo_path(repo), class: "tiny button" %>
+    </div>
+  </div>
 <% end %>
-</ul>
