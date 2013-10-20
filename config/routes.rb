@@ -2,7 +2,7 @@ Gitfolio::Application.routes.draw do
 
   root to: "static#home"
   # resources :projects
-  resources :developers, only: [:show, :patch]
+  resources :developers, only: [:show, :update]
   resources :projects, only: [:create, :update, :destroy]
 
 
