@@ -13,7 +13,7 @@ describe SessionsController do
 
     it "should redirect to correct developer show page" do
       get :create, provider: 'github'
-      expect(response).to redirect_to( developer_path("test_username") )
+      expect(response).to redirect_to( edit_developer_path("test_username") )
     end
 
   end
