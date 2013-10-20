@@ -2,16 +2,16 @@
   <div class="vcenter">
     <div class="row">
       <div class="small-8 small-centered columns">
-        <div class="shadowpanel">
-          <h1>Welcome to Gitfolio</h1>
-          <h3>Please log in with your Github account</h3>
-          <% if session[:developer_id] == nil %>
-          	<%= render partial: 'sessions/sign_in' %>
-          <% else %>
-          	<%= render partial: 'sessions/sign_out' %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="panel">
+            <h1>Welcome to Gitfolio</h1>
+            <h3>Please log in with your Github account</h3>
+            <% if session[:developer_id] == nil %>
+            	<%= render partial: 'sessions/sign_in' %>
+            <% else %>
+            	<%= render partial: 'sessions/sign_out' %>
+            <% end %>
+        </div> <!-- panel -->
+      </div> <!-- small-8 -->
+    </div> <!-- row -->
+  </div> <!-- vcenter -->
+</div> <!-- container -->

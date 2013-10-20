@@ -1,41 +1,52 @@
-<div class="small-4 large-12 columns">
-  <a href="#" data-reveal-id=<%= "project-form-modal-#{project.id}" %> class="button">
-  <%= project.id ? "Edit #{project.title}": "Add Project" %></a>
+
+<a href="#" data-reveal-id=<%= "project-form-modal-#{project.id}" %> class="button">
+  <%= project.id ? "Edit #{project.title}": "Add Project" %>
+</a>
 <!-- Project form modal -->
-  <div id=<%= "project-form-modal-#{project.id}" %> class="reveal-modal">
-    <%= form_for project do |f| %>
-      <fieldset>
-        <legend>Project</legend>
-        <div class="row">
-          <div class="large-4 columns">
-            <%= f.label :title, 'Project Name' %>
-            <%= f.text_field :title %>
-          </div> <!-- /large-4 col -->
-          <div class="large-4 columns">
-            <%= f.label :url, 'Project URL' %>
-            <%= f.text_field :url %>
-          </div> <!-- /large-4 col -->
-          <div class="large-4 columns">
-            <%= f.label :role, 'Your role on the project' %>
-            <%= f.text_field :role %>
-          </div> <!-- /large-4 col -->
-        </div> <!-- /row -->
+<div id=<%= "project-form-modal-#{project.id}" %> class="reveal-modal">
+  <%= form_for project do |f| %>
+    <fieldset>
+      <legend>Project</legend>
+      <div class="row">
+        <div class="large-4 columns">
+          <%= f.label :title, 'Project Name' %>
+          <%= f.text_field :title %>
+        </div> <!-- /large-4 col -->
+        <div class="large-4 columns">
+          <%= f.label :url, 'Project URL' %>
+          <%= f.text_field :url %>
+        </div> <!-- /large-4 col -->
+        <div class="large-4 columns">
+          <%= f.label :role, 'Your role on the project' %>
+          <%= f.text_field :role %>
+        </div> <!-- /large-4 col -->
+      </div> <!-- /row -->
 
-        <div class="row">
-          <div class="large-12 columns">
-            <%= f.label :description, 'Project Description' %>
-            <%= f.text_area :description %>
-          </div><!-- /large-12 col -->
-        </div> <!-- /row -->
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.label :description, 'Project Description' %>
+          <%= f.text_area :description %>
+        </div><!-- /large-12 col -->
+      </div> <!-- /row -->
 
-      </fieldset>
+      <div class="row">
+        <div class="large-12 columns">
+          <%= render partial: 'repositories' %>
+        </div><!-- /large-12 col -->
+      </div> <!-- /row -->
+    </fieldset>
+  <!-- nav buttons -->
     <div class="row">
-      <div class="large-12 columns">
-        <%= f.submit project.id ? "Edit #{project.title}": "Add Project" %></a>
+      <div class="small-4 columns">
+        <%= f.submit project.id ? "Edit Project": "Add Project", class: "button" %>
       </div>
+      <% if project.id %>
+        <div class="small-4 small-offset-4 columns">
+          <%= f.submit "Delete Project", class: "button" %>
+        </div>
+      <% end %>
     </div>
     <a class="close-reveal-modal">&#215;</a>
-    <% end %> <!-- /form_for -->
-  </div>
-<!-- /modal -->
+  <% end %> <!-- /form_for -->
 </div>
+<!-- /modal -->
