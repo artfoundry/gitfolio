@@ -11,6 +11,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    project = Project.find(params[:id])
+    Project.destroy(project)
+
+    redirect_to developer_path(project.developer)
+  end
+
   def create_from_repo
 
     developer = Developer.find_by github_username: params[:owner]
