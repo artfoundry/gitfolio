@@ -1,5 +1,13 @@
 <div class="content" data-section-content>
+
+  <ul data-orbit>
   <% @projects.each do |project| %>
-    <div class="project"><%= project.title %></div>
+    <li class= <%= "project-id-#{project.id}" %> >
+      <h1><a href=<%= project.url %> /><%= project.title %></a></h1>
+      <img src="http://foundation.zurb.com/docs/img/demos/orbit/demo1.jpg" />
+      <div class="orbit-caption"><%= project.description %></div>
+    </li>
   <% end %>
+  </ul>
+
 </div>
