@@ -25,5 +25,10 @@ describe SessionsController do
       expect(session[:developer_id]).to be_nil
     end
 
+    it "should redirect to home page" do
+      get :destroy, provider: 'github'
+      expect(response).to redirect_to(root_path)
+    end
+
   end
 end
