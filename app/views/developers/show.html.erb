@@ -19,6 +19,7 @@
           <!-- Only show public tab if the user is logged in -->
           <% if session[:developer_id] == @developer.id %>
           <div class="section-container tabs" data-section="tabs">
+
             <!-- Public tab -->
             <section class="active">
               <p class="title" data-section-title><a href="#panel1">Public</a></p>
@@ -34,12 +35,18 @@
               </div>
             </section>
             <!-- End Edit tab -->
-               <section>
+
+            <section>
               <p class="title" data-section-title><a href="#panel2">Profile</a></p>
               <div class="content" data-section-content>
                 <%= render partial: 'edit_profile' %>
               </div>
             </section>
+
+            <section>
+              <p class="title" data-section-title><%= link_to "logout", logout_path %> </p>
+            </section>
+
           <% end %>
           </div> <!-- section-container tabs -->
         </div> <!-- shadowpanel -->
