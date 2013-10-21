@@ -12,9 +12,10 @@ class StaticController < ApplicationController
   end
 
   def files_from_repo
-    # params[:owner]
+    @files_hash = return_all_file_names_and_paths(params[:owner], params[:name])
+    @files_hash = { owner: params[:owner], files: @files_hash }
 
-    render :json => params
+    render :json => @files_hash
   end
 
 end
