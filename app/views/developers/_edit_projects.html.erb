@@ -5,16 +5,23 @@
     </div> <!-- /large-12 col -->
   </div> <!-- /row col -->
   <div class="row">
-   <div class="large-12 columns">
+   <div class="large-3 columns">
+      <div data-reveal-id=<%= "project-form-modal-#{@new_project}" %> class="button radius">Add Project</div>
       <%= render 'projects/form', project: @new_project %>
     </div> <!-- /large-12 col -->
   </div> <!-- /row col -->
 
   <div class="row">
-    <div class="large-12 columns">
-      <% @projects.each do |project| %>
-        <%= render 'projects/form', project: project %>
-      <% end %>
+    <div class="large-12 columns" style="text-align: center;">
+      <ul class="small-block-grid-2 large-block-grid-4">
+        <% @projects.each do |project| %>
+          <li data-reveal-id=<%= "project-form-modal-#{project.id}" %> class="project button shadow-panel">
+            Edit<br>
+            <em><%= "#{project.title}" %></em>
+          </li>
+          <%= render 'projects/form', project: project %>
+        <% end %>
+      </ul>
     </div> <!-- /large-12 col -->
   </div> <!-- /row col -->
 </div> <!-- /panel -->

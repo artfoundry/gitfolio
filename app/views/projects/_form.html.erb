@@ -1,7 +1,7 @@
+<!-- <li data-reveal-id=<%#= "project-form-modal-#{project.id}" %> class="panel radius">
+  <%#= project.id ? "Edit #{project.title}": "Add Project" %>
+</li> -->
 
-<a href="#" data-reveal-id=<%= "project-form-modal-#{project.id}" %> class="button">
-  <%= project.id ? "Edit #{project.title}": "Add Project" %>
-</a>
 <!-- Project form modal -->
 <div id=<%= "project-form-modal-#{project.id}" %> class="reveal-modal">
   <%= form_for project do |f| %>
