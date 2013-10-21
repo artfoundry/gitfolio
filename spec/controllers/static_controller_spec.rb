@@ -17,4 +17,13 @@ describe StaticController do
     end
 
   end
+
+  describe "POST static#files_from_repo" do
+    repo = { owner: "raorao", url: "https://github.com/raorao/ar-student-schema"}
+    it "should render a JSON object of files" do
+      get :files_from_repo, repo
+      expect(response).to be_a(Hash)
+    end
+
+  end
 end
