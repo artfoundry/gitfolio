@@ -18,18 +18,6 @@ class ProjectsController < ApplicationController
     redirect_to developer_path(project.developer)
   end
 
-  def create_from_repo
-
-    developer = Developer.find_by github_username: params[:owner]
-    developer.projects.create(
-      title: params[:name],
-      url: params[:url],
-      description: params[:description]
-      )
-
-    redirect_to developer_path(developer)
-  end
-
   def update
     project = Project.find(params[:id])
     project.attributes = valid_params(params)
