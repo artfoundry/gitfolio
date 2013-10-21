@@ -1,0 +1,3 @@
+class CodeSnippet < Chunk
+
+end

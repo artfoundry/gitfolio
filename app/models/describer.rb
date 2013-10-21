@@ -1,0 +1,2 @@
+class Describer < Chunk
+end
