@@ -9,7 +9,7 @@
       <% end %>
     </div>
     <div class="small-4 columns">
-      <%= button_to "Load from repository", files_from_repo_path(repo), class: "tiny button" %>
+      <%= button_to "Load from repository", files_from_repo_path(repo), class: "tiny button", form_class: "file-loader", remote: true %>
     </div>
   </div>
 <% end %>
