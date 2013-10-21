@@ -1,7 +1,6 @@
 .shadow-panel { @include panel; }
 .outline-panel { @include panel; }
 
-
 .container {
   position: relative;
   height: 300px;
@@ -36,3 +35,10 @@
   padding: 10px;
   width: 50%;
 }
+
+.sliderdiv {
+  position: relative;
+  top: 30px;
+  padding: 10px;
+}
+

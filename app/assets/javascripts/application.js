@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require jquery.flexslider
 //= require_tree .
 
 $(document).foundation();
