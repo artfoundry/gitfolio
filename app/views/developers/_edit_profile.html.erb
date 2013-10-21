@@ -1,46 +1,31 @@
 <div class="panel">
   <div class="row">
-    <div class="large-12 columns">
+    <div class="large-6 columns">
       <h4>My Personal Info</h4>
     </div> <!-- /large-12 col -->
-  </div> <!-- /row col -->
 
-  <div class="row">
-    <div class="large-6 columns">
-      <div class="outline-panel">
-        Github Avatar goes here
-      </div>
-    </div> <!-- /large-12 col -->
-    <div class="large-6 columns">
+    <div class="large-6 columns" style="padding-left: 60px;">
       <a href="#" data-reveal-id="editDeveloperModal" class="button">Edit Profile</a>
-    </div> <!-- /large-12 col -->
+    </div> <!-- /large-6 col -->
   </div> <!-- /row col -->
 
   <div class="row">
     <div class="large-6 columns">
       <h5>Name: <%= @developer[:name] %></h5>
-    </div> <!-- /large-6 col -->
-    <div class="large-6 columns">
       <h5>Profession: <%= @developer[:profession] %></h5>
-    </div> <!-- /large-6 col -->
-  </div> <!-- /row col -->
-
-  <div class="row">
-    <div class="large-6 columns">
       <h5>Email: <%= @developer[:email] %></h5>
-    </div> <!-- /large-6 col -->
-    <div class="large-6 columns">
       <h5>Location: <%= @developer[:location] %></h5>
-    </div> <!-- /large-6 col -->
-  </div> <!-- /row col -->
-
-  <div class="row">
-    <div class="large-6 columns">
       <h5>Github Username: <%= @developer[:github_username] %></h5>
-    </div> <!-- /large-6 col -->
-    <div class="large-6 columns">
       <h5>Github URL: <%= @developer[:github_url] %></h5>
     </div> <!-- /large-6 col -->
+    <%# if @developer.image %>
+      <div class="large-6 columns" style="height: 200px;">
+        <div class="avatar">
+          <img class="avatar-image" src="http://www.empireonline.com/images/uploaded/chuck-norris-uzis.jpg">
+          <%#= developer.image %>
+        </div>
+      </div>
+    <%# end %>
   </div> <!-- /row col -->
 
 <!-- Profile form modal -->
