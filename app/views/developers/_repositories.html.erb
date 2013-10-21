@@ -1,5 +1,5 @@
 <% @repositories.each do |repo| %>
-  <div class="row">
+  <div class="row github-container">
     <div class="small-8 columns">
       <a href=<%=repo[:url]%> ><%= repo[:name] %></a><br>
       <% if repo[:description] != "" %>
