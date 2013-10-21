@@ -7,7 +7,7 @@
   <%= form_for project do |f| %>
     <fieldset>
       <div class="panel">
-        <legend>Project</legend>
+        <h5>Project</h5>
         <div class="row">
           <div class="large-4 columns">
             <%= f.label :title, 'Project Name' %>
@@ -15,10 +15,10 @@
           </div> <!-- /large-4 col -->
           <div class="large-4 columns">
             <%= f.label :url, 'Project URL' %>
-            <%= f.text_field :url %>
+            <%= f.text_field :url, placeholder: "http://www.url.com" %>
           </div> <!-- /large-4 col -->
           <div class="large-4 columns">
-            <%= f.label :role, 'Your role on the project' %>
+            <%= f.label :role, 'Project Role' %>
             <%= f.text_field :role %>
           </div> <!-- /large-4 col -->
         </div> <!-- /row -->
@@ -29,6 +29,14 @@
             <%= f.text_area :description %>
           </div><!-- /large-12 col -->
         </div> <!-- /row -->
+
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :code_snippet, 'Code from your project' %>
+            <%= f.text_area :code_snippet %>
+          </div><!-- /large-12 col -->
+        </div> <!-- /row -->
+
       </div> <!-- /panel -->
     </fieldset>
 

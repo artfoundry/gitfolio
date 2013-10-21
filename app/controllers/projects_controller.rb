@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
   private
 
   def valid_params(params)
-    params[:project].permit(:title, :url, :description, :role)
+    params[:project].permit(:title, :url, :description, :role, :code_snippet)
   end
 
 end
