@@ -10,6 +10,5 @@ describe Developer do
     expect(developer.github_user_info).to be_a(Hash)
     expect(developer.github_user_info.keys).to include(:github_url)
   end
-
 end
 
