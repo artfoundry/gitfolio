@@ -55,3 +55,7 @@
   line-height: 20px;
   margin: 10px 10px 10px 10px;
 }
+
+#hidden {
+  visibility: hidden;
+}
