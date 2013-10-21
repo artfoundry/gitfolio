@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20131021220420) do
     t.string   "type"
     t.string   "url"
     t.text     "description"
+    t.text     "textfield"
     t.text     "code"
     t.integer  "project_id"
     t.datetime "created_at"
