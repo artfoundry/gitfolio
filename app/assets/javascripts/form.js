@@ -2,15 +2,16 @@
 $('.file-loader').on('ajax:success',loadfiles)
 
 function loadfiles(event, repoData) {
-  removeRows()
+  var self = this
+  removeRows(self)
   console.log('started from the bottom')
   loadFiles(repoData)
 
 
 }
 
-function removeRows() {
-  var $repoRows = $( '.github-container' )
+function removeRows(self) {
+  var $repoRows = $( self ).parent().parent().parent()
   $repoRows.remove()
 }
 
