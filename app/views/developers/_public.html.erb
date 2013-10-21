@@ -1,44 +1,49 @@
 <div class="panel">
-  <ul data-orbit>
-    <% @projects.each do |project| %>
-      <li class= <%= "project-id-#{project.id}" %> data-orbit-slide= <%= "#{project.id}" %> >
-        <h1>
-          <% if project.url.match(/www.\w+.\w+/) %>
-            <a href=<%= project.url %> >
-          <% end %>
-            <%= project.title %>
-          <% if project.url.match(/www.\w+.\w+/) %>
-            </a>
-          <% end %>
-        </h1>
-        <div class="row">
-          <div class="large-5 large-offset-1 columns">
-            <div class="panel" id="code">
+  <div class="sliderdiv">
+    <div id="slider" class="flexslider">
+      <ul class="slides">
+        <% @projects.each do |project| %>
+          <li>
+            <div class="row">
+              <div class="large-12 columns">
+                <h1>
+                  <% if project.url.match(/www.\w+.\w+/) %>
+                    <a href=<%= project.url %> >
+                  <% end %>
+                    <%= project.title %>
+                  <% if project.url.match(/www.\w+.\w+/) %>
+                    </a>
+                  <% end %>
+                </h1>
+              </div>
+            </div>
+            <div class="row">
               <% if project.code_snippet %>
-                <pre class="prettyprint"><%= project.code_snippet %></pre>
+                <div class="large-6<%#= project.image ? 6 : 12 %> columns">
+                  <div class="panel" id="code">
+                    <% if project.code_snippet %>
+                      <pre class="prettyprint"><%= project.code_snippet %></pre>
+                    <% end %>
+                  </div>
+                </div>
               <% end %>
+              <%# if project.image %>
+                <div class="large-<%= project.code_snippet ? 6 : 12 %> columns">
+                  <div class="panel" id="image">
+                    <%#= project.image %>
+
+                  </div>
+                </div>
+              <%# end %>
             </div>
-          </div>
-          <div class="large-6 columns">
-            <div class="panel" id="image">
-              <%#= project.image %>
-
+            <div class="row">
+              <div class="large-12 columns">
+                <%= project.description %>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="orbit-caption"><%= project.description %></div>
-        </div>
-      </li>
-
-    <% end %> <!-- projects.each -->
-  </ul>
-
-  <div class="row">
-    <% @projects.each do |project| %>
-      <div class="large-<%= @projects.length > 3 ? 4 : 12 / @projects.length %> columns">
-        <a href="#" data-orbit-link= <%= "#{project.id}" %> class="button"><%= "#{project.title}" %></a>
-      </div>
-    <% end %>
+          </li>
+        <% end %> <!-- projects.each -->
+      </ul>
+    </div>
   </div>
 </div> <!-- /panel -->
