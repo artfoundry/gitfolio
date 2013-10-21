@@ -5,11 +5,11 @@
       <% if repo[:description] != "" %>
         <%= repo[:description] %>
       <% else %>
-        <em>no descrption given</em>
+        <em>no description given</em>
       <% end %>
     </div>
     <div class="small-4 columns">
-      <%= button_to "Add to projects", project_from_repo_path(repo), class: "tiny button" %>
+      <%= button_to "Select File", get_files_for_repo_path(repo), class: "tiny button", method: :get %>
     </div>
   </div>
 <% end %>

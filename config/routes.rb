@@ -6,7 +6,7 @@ Gitfolio::Application.routes.draw do
   resources :projects, only: [:create, :update, :destroy]
 
 
-  post '/project_from_repo', :to => 'projects#create_from_repo'
+  get '/get_files_for_repo', :to => 'projects#get_files_for_repo'
   post '/developers/repositories', :to => 'developers#repositories'
   get '/auth/:provider/callback', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'

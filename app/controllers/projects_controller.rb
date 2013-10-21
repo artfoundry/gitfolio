@@ -18,16 +18,13 @@ class ProjectsController < ApplicationController
     redirect_to developer_path(project.developer)
   end
 
-  def create_from_repo
-
+  def get_files_for_repo
     developer = Developer.find_by github_username: params[:owner]
-    developer.projects.create(
-      title: params[:name],
-      url: params[:url],
-      description: params[:description]
-      )
 
-    redirect_to developer_path(developer)
+    developer.return_all_file_names_and_paths(developer.github_username,params[:repo][:name])
+    
+
+    redirect_to root_path
   end
 
   def update
