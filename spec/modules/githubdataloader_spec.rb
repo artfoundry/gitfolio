@@ -28,12 +28,27 @@ describe "GitHubDataLoader" do
     end
   end
 
-  describe "return_all_files" do
+  describe "return_all_gists_and_repos" do
     it "should return an array of hash objects, which include both gists and hashes" do
-      files = GitHubDataLoader.return_all_files(user)
+      files = GitHubDataLoader.return_all_gists_and_repos(user)
       expect(files).to be_a(Array)
       expect(files[0]).to be_a(Hash)
       expect(files[0].keys).to include(:name)
+    end
+  end
+
+  describe "return_file_content" do
+    it "returns a string equivalent to the content of the specified file" do
+      file_content = GitHubDataLoader.return_file_content("dmill", "gitfolio", "spec/modules/githubdataloader_spec.rb")
+      expect(file_content).to eq(File.read(__FILE__))
+    end
+  end
+
+  describe "return_all_file_names_and_paths" do
+    it "returns a hash cotaining all files in a repository" do
+      all_files = GitHubDataLoader.return_all_file_names_and_paths("dmill", "gitfolio")
+      expect(all_files).to include({"Gemfile" => "Gemfile"})
+      expect(all_files).to include({"githubdataloader_spec.rb" => "spec/modules/githubdataloader_spec.rb"})
     end
   end
 end

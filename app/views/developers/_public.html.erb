@@ -14,8 +14,9 @@
         <div class="row">
           <div class="large-5 large-offset-1 columns">
             <div class="panel" id="code">
-              <%#= project.code %>
-
+              <% if project.code_snippet %>
+                <pre class="prettyprint"><%= project.code_snippet %></pre>
+              <% end %>
             </div>
           </div>
           <div class="large-6 columns">
@@ -30,8 +31,9 @@
         </div>
       </li>
 
-    <% end %>
+    <% end %> <!-- projects.each -->
   </ul>
+
   <div class="row">
     <% @projects.each do |project| %>
       <div class="large-<%= @projects.length > 3 ? 4 : 12 / @projects.length %> columns">
