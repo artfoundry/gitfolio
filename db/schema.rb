@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20131021220420) do
   create_table "chunks", force: true do |t|
     t.string   "title"
     t.string   "type"
+    t.string   "url"
+    t.text     "description"
+    t.text     "code"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
