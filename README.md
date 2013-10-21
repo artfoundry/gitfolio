@@ -41,7 +41,7 @@ $ touch .env.development
     APP_SECRET=your_secret
 
 Your app ID and secret can be generated [on Github](https://github.com/settings/applications/)
-
+*Set callback to http://localhost:3000/
 * Seed database
 
 ```bash
