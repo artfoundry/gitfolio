@@ -1,5 +1,7 @@
+require 'modules/githubdataloader'
+
 class StaticController < ApplicationController
-  # include GitHubDataLoader
+  include GitHubDataLoader
 
   def home
     if session[:developer_id]
@@ -10,6 +12,7 @@ class StaticController < ApplicationController
   end
 
   def files_from_repo
+    # params[:owner]
 
     render :json => params
   end
