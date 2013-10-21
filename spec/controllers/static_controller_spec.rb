@@ -28,4 +28,16 @@ describe StaticController do
 
     end
   end
+
+  describe "POST static#get_file_info" do
+    file_info = {owner: "raorao", path: "Gemfile", repo: "ar-student-schema" }
+
+    it "should return a hash of file information given a user, repo, and path" do
+      get :get_file_info, file_info
+      expect(assigns(:file_content)).to be_a(String)
+      expect(assigns(:file_content)).to eql("source 'https://rubygems.org'\n\ngem 'activerecord', :require => 'active_record'\n")
+
+    end
+  end
+
 end

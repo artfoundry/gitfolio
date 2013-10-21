@@ -5,7 +5,7 @@ Gitfolio::Application.routes.draw do
   resources :developers, only: [:show, :update]
   resources :projects, only: [:create, :update, :destroy]
 
-
+  post '/get_file_info', :to => 'static#get_file_info'
   post '/files_from_repo', :to => 'static#files_from_repo'
   post '/developers/repositories', :to => 'developers#repositories'
   get '/auth/:provider/callback', :to => 'sessions#create'

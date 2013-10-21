@@ -18,4 +18,10 @@ class StaticController < ApplicationController
     render :json => @files_hash
   end
 
+  def get_file_info
+    @file_content = return_file_content(params["owner"], params["repo"], params["path"])
+
+    render :json => @file_content
+  end
+
 end
