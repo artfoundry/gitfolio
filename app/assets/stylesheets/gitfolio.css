@@ -1,5 +1,3 @@
-.shadow-panel { @include panel; }
-.outline-panel { @include panel; }
 
 body {
   background-color: #2ba6cb;
@@ -58,7 +56,6 @@ body {
 
 .pro-border1 {
   background-color: rgb(230,230,230);
-
 }
 
 .shadow-panel {
