@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 20131021220420) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
-    t.text     "code_snippet"
   end
 
 end
