@@ -19,7 +19,7 @@
     <div class="large-12 columns" style="text-align: center;">
       <ul class="small-block-grid-2 large-block-grid-4">
         <% @projects.each do |project| %>
-          <li data-reveal-id=<%= "project-form-modal-#{project.id}" %> class="project button shadow-panel">
+          <li data-reveal-id="project-form-modal-<%= project.id %>" class="project button shadow-panel">
             Edit<br>
             <em><%= "#{project.title}" %></em>
           </li>
