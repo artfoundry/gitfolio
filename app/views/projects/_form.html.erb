@@ -28,7 +28,15 @@
 
       </div> <!-- /panel -->
     </fieldset>
+    <% if project.id %>
+      <a href="#" data-dropdown="drop<%= project.id %>" class="button dropdown">Add Chunk</a><br>
 
+      <ul id="drop<%= project.id %>" class="f-dropdown">
+        <li><a href="#">Image</a></li>
+        <li><a href="#">Text</a></li>
+        <li><a href="#">Code</a></li>
+      </ul>
+    <% end %>
   <!-- nav buttons -->
     <div class="row">
       <div class="small-4 columns">
@@ -45,13 +53,6 @@
       <% end %>
     </div> <!-- /row -->
   <!-- Repos -->
-      <div class="panel">
-        <div class="row">
-          <div class="large-12 columns">
-            <%= render partial: 'repositories' %>
-          </div><!-- /large-12 col -->
-        </div> <!-- /row -->
-      </div> <!-- /panel -->
 
     <a class="close-reveal-modal">&#215;</a>
 </div>
