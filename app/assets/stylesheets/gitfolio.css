@@ -33,9 +33,7 @@ body {
   border-style: groove;
   border-radius: 5px;
   border-color: #2284a1;
-  /*padding: 10% 10% 10% 10%;*/
   vertical-align: middle;
-  /*min-width: 150px;*/
   min-height: 40px;
   line-height: 20px;
   margin: 10px 10px 10px 10px;
@@ -46,35 +44,24 @@ body {
   max-width: 200px;
 }
 
-.pro-border0 {
-  background-color: rgb(210,210,210);
-  /*border-color: gray;*/
-  /*border-style: solid;*/
-  /*border-width: 2px;*/
-  /*border-radius: 5px;*/
+.pro-background {
+   padding: 0px 0px 0px 0px;
 }
 
-.pro-border1 {
-  background-color: rgb(230,230,230);
+.pro-fill0 {
+  background-color: rgb(210,230,230);
+  margin: 0px 0px 0px 0px;
+}
+
+.pro-fill1 {
+  background-color: rgb(230,250,250);
+  margin: 0px 0px 0px 0px;
 }
 
 .shadow-panel {
   -moz-box-shadow: 10px 10px 10px rgba(0,0,0,0.7);
   -webkit-box-shadow: 10px 10px 10px rgba(0,0,0,0.7);
   box-shadow: 10px 10px 10px rgba(0,0,0,0.7);
-}
-
-.outline-panel {
-  border-width: 1px;
-  border-style: solid;
-  padding: 10px;
-  width: 50%;
-}
-
-.sliderdiv {
-  position: relative;
-  top: 30px;
-  padding: 10px;
 }
 
 .avatar {
