@@ -4,6 +4,7 @@ Gitfolio::Application.routes.draw do
   # resources :projects
   resources :developers, only: [:show, :update]
   resources :projects, only: [:create, :update, :destroy]
+  resources :chunks, only: [:create]
 
 
   post '/project_from_repo', :to => 'projects#create_from_repo'
