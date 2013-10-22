@@ -35,33 +35,19 @@
         </div> <!-- /large-12 col -->
       </div> <!-- /row -->
       <div class="row">
-    <!-- chunk 2 -->
-        <div class="large-6 columns">
-          <div class="panel">
-            This is chunk 2
+
+    <% if project.chunks.count > 1 %>
+      <% project.chunks[1..-1].each_with_index do |chunk, index| %>
+        <% if index % 2 == 0 %>
+          <div class="row">
+        <% end %>
+        <%= render 'chunks/regular_display', chunk: chunk %>
+        <% if index % 2 == 1 || index == project.chunks.count - 2 %>
           </div>
-        </div>
-    <!-- chunk 3 -->
-        <div class="large-6 columns">
-          <div class="panel">
-            This is chunk 3
-          </div>
-        </div>
-      </div> <!-- /row -->
-      <div class="row">
-    <!-- chunk 4 -->
-        <div class="large-6 columns">
-          <div class="panel">
-            This is chunk 4
-          </div>
-        </div>
-    <!-- chunk 5 -->
-        <div class="large-6 columns">
-          <div class="panel">
-            This is chunk 5
-          </div>
-        </div>
-      </div> <!-- /row -->
+        <% end %>
+      <% end %>
+    <% end %>
+
     </div> <!-- /panel pro-border -->
   <% end %> <!-- projects.each -->
 
