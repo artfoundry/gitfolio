@@ -1,0 +1,35 @@
+<div class="contain-to-grid sticky shadow-panel">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1><a href="/">Epatomic</a></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <% if session[:developer_id] == nil %>
+        <ul class="left">
+          <% @projects.each_with_index do |project, i| %>
+            <li class="divider"></li>
+            <li><a href="#<%= i %>">Project: <%= project.title %></a></li>
+          <% end %>
+          <li class="divider"></li>
+          <li class="has-form"><a href="#profile"><%= @developer.name %>'s profile</a></li>
+        </ul>
+      <% end %>
+      <!-- Right Nav Section -->
+      <% if session[:developer_id] != nil %>
+        <ul class="right">
+          <li class="divider"></li>
+          <li class="has-form">
+            <%= link_to "Logout", logout_path %>
+          </li>
+        </ul>
+      <% end %>
+    </section>
+  </nav>
+</div>

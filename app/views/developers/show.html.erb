@@ -1,3 +1,5 @@
+<%= render partial: 'static/navbar' %>
+
 <% if session[:developer_id] != @developer.id %>
 <div class="pro_container">
   <div class="pro_vcenter">
@@ -10,12 +12,14 @@
     </div> <!-- row -->
   </div> <!-- pro_vcenter -->
 </div> <!-- pro_container -->
+
 <% else %>
 <div class="pro_container">
   <div class="pro_vcenter">
     <div class="row">
       <div class="small-12 large-12 small-centered columns">
         <div class="shadow-panel">
+
           <!-- Only show public tab if the user is logged in -->
           <% if session[:developer_id] == @developer.id %>
           <div class="section-container tabs" data-section="tabs">
@@ -47,11 +51,6 @@
             </section>
             <!-- End Edit Profile tab -->
 
-            <!-- Start Logout Tab -->
-            <section>
-              <p class="title" data-section-title><%= link_to "Logout", logout_path %></p>
-            </section>
-            <!-- End Logout Tab -->
           </div> <!-- section-container tabs -->
           <% end %> <!-- if session -->
         </div> <!-- shadowpanel -->
