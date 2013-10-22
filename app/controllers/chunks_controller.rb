@@ -12,7 +12,7 @@ class ChunksController < ApplicationController
 
     return params[:describer].permit(:title, :url, :textfield, :project_id) if params[:describer]
 
-    return params[:image].permit(:title, :url, :description, :project_id) if params[:image]
+    return params[:image].permit(:title, :url, :source, :description, :project_id) if params[:image]
 
     return params[:code_snippet].permit(:title, :description, :code, :url, :project_id) if params[:code_snippet]
 
