@@ -44,6 +44,13 @@ describe "GitHubDataLoader" do
     end
   end
 
+  describe "return_author_commits" do
+    it "returns all of the commits for an author on a given repo" do
+      commits = GitHubDataLoader.return_author_commits("dmill", "gitfolio")
+      expect(commits[7]["sha"]).not_to be_empty
+    end
+  end
+
   describe "return_all_file_names_and_paths" do
     it "returns a hash cotaining all files in a repository" do
       all_files = GitHubDataLoader.return_all_file_names_and_paths("dmill", "gitfolio")

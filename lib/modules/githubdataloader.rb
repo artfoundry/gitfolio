@@ -53,6 +53,11 @@ module GitHubDataLoader
     }
   end
 
+  def return_author_commits(username, repo, owner=username)
+    uri_string = "https://api.github.com/repos/#{username}/#{repo}/commits?author=#{owner}"
+    make_api_call(uri_string)
+  end
+
   def return_all_file_names_and_paths(username, repo, path = nil, files = {})
     uri_string = "https://api.github.com/repos/#{username}/#{repo}/contents/#{path}"
     root_directory = make_api_call(uri_string)
@@ -88,5 +93,4 @@ module GitHubDataLoader
     JSON.parse(http.request(request).body)
 
   end
-
 end
