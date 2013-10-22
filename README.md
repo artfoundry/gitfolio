@@ -17,3 +17,51 @@ Current SMURF:
 -> User can save code for a particular project
 -> User can display code for a particular project in markup language
 -> Project page has a clean and modular layout
+
+### Developer Setup:
+* Bundle gems
+
+```bash
+$ bundle
+```
+
+* Initialize the database
+
+```bash
+$ rake db:create
+$ rake db:migrate
+```
+
+* Create .env file to store API information
+
+```bash
+$ touch .env.development
+```
+    APP_ID=your_id
+    APP_SECRET=your_secret
+
+Your app ID and secret can be generated [on Github](https://github.com/settings/applications/)
+
+* Seed database
+
+```bash
+$ rake db:seed
+```
+* Start Rails
+
+```bash
+$ rails server
+```
+
+### Tests:
+* Setup the test environment:
+
+```bash
+$ rake db:test:prepare
+```
+
+* Run the tests:
+
+```bash
+$ rspec
+```
