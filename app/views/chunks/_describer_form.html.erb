@@ -1,4 +1,5 @@
 <%= form_for :describer, :url => chunks_path do |describer| %>
+  <%= describer.hidden_field :type, :value => "describer" %>
   <%= describer.hidden_field :project_id, :value => project.id %>
   <%= describer.label :title, 'title' %>
   <%= describer.text_field :title %>

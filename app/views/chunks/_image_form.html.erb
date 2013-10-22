@@ -1,4 +1,5 @@
 <%= form_for :image, :url => chunks_path do |image| %>
+  <%= image.hidden_field :type, :value => "image" %>
   <%= image.hidden_field :project_id, :value => project.id %>
   <%= image.label :title, 'title' %>
   <%= image.text_field :title %>

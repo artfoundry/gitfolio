@@ -1,4 +1,5 @@
 <%= form_for :code_snippet, :url => chunks_path do |code_snippet| %>
+  <%= code_snippet.hidden_field :type, :value => "code_snippet" %>
   <%= code_snippet.hidden_field :project_id, :value => project.id %>
   <%= code_snippet.label :title, 'title' %>
   <%= code_snippet.text_field :title %>

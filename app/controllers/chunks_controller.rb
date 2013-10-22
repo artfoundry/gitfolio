@@ -10,11 +10,11 @@ class ChunksController < ApplicationController
 
   def valid_params(params)
 
-    return params[:describer].permit(:title, :url, :textfield, :project_id) if params[:describer]
+    return params[:describer].permit(:title, :url, :textfield, :project_id, :type) if params[:describer]
 
-    return params[:image].permit(:title, :url, :description, :project_id) if params[:image]
+    return params[:image].permit(:title, :url, :description, :project_id, :type) if params[:image]
 
-    return params[:code_snippet].permit(:title, :description, :code, :url, :project_id) if params[:code_snippet]
+    return params[:code_snippet].permit(:title, :description, :code, :url, :project_id, :type) if params[:code_snippet]
 
 
   end
