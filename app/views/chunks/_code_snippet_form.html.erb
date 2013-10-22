@@ -1,12 +1,12 @@
-<%= form_for :image, :url => chunks_path do |image| %>
-  <%= image.hidden_field :project_id, :value => project.id %>
-  <%= image.label :title, 'title' %>
-  <%= image.text_field :title %>
-  <%= image.label :url, 'url' %>
-  <%= image.text_field :url %>
-  <%= image.label :code, 'code snippet' %>
-  <%= image.text_area :code %>
-  <%= image.label :description, 'description' %>
-  <%= image.text_area :description %>
-  <%= image.submit %>
+<%= form_for :code_snippet, :url => chunks_path do |code_snippet| %>
+  <%= code_snippet.hidden_field :project_id, :value => project.id %>
+  <%= code_snippet.label :title, 'title' %>
+  <%= code_snippet.text_field :title %>
+  <%= code_snippet.label :url, 'link' %>
+  <%= code_snippet.text_field :url %>
+  <%= code_snippet.label :code, 'code snippet' %>
+  <%= code_snippet.text_area :code %>
+  <%= code_snippet.label :description, 'description' %>
+  <%= code_snippet.text_area :description %>
+  <%= code_snippet.submit %>
 <% end %>

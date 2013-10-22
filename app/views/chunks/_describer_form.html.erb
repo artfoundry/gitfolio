@@ -1,10 +1,10 @@
-<%= form_for :image, :url => chunks_path do |image| %>
-  <%= image.hidden_field :project_id, :value => project.id %>
-  <%= image.label :title, 'title' %>
-  <%= image.text_field :title %>
-  <%= image.label :url, 'url' %>
-  <%= image.text_field :url %>
-  <%= image.label :textfield, 'description' %>
-  <%= image.text_area :textfield %>
-  <%= image.submit %>
+<%= form_for :describer, :url => chunks_path do |describer| %>
+  <%= describer.hidden_field :project_id, :value => project.id %>
+  <%= describer.label :title, 'title' %>
+  <%= describer.text_field :title %>
+  <%= describer.label :url, 'link' %>
+  <%= describer.text_field :url %>
+  <%= describer.label :textfield, 'description' %>
+  <%= describer.text_area :textfield %>
+  <%= describer.submit %>
 <% end %>
