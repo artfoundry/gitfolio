@@ -63,33 +63,6 @@
         </div>
       </div> <!-- /row -->
     </div> <!-- /panel pro-border -->
-=======
-        </div> <!-- /row -->
-      </div> <!-- /large-12 col -->
-      <div class="row">
-        <% if project.code_snippet %>
-          <div class="large-6 columns">
-            <div class="panel" id="code">
-              <% if project.code_snippet %>
-                <pre class="prettyprint"><%= project.code_snippet %></pre>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-
-          <div class="large-<%= project.code_snippet ? 6 : 12 %> columns">
-            <div class="panel" id="image">
-            </div>
-          </div>
-
-      </div> <!-- /row -->
-      <div class="row">
-        <div class="large-12 columns">
-          <%= project.description %>
-        </div>
-      </div> <!-- /row -->
-    </div> <!-- /panel callout -->
->>>>>>> 6a5f861eed527009b6cca722300294d25bd1d347
   <% end %> <!-- projects.each -->
 
 <!-- Profile -->
