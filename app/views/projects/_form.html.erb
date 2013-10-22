@@ -21,24 +21,13 @@
 
         <div class="row">
           <div class="large-12 columns">
-            <%= f.label :description, 'Project Description' %>
-            <%= f.text_area :description %>
+            <%= f.label :markdown, 'Project Description' %>
+            <%= f.text_area :markdown %>
           </div><!-- /large-12 col -->
         </div> <!-- /row -->
 
 
-        <div class="row">
-          <% if project.id %>
-            <a href="#" data-dropdown="drop<%= project.id %>" class="button dropdown">Add Chunk</a><br>
-
-            <ul id="drop<%= project.id %>" class="f-dropdown">
-              <li data-reveal-id="chunkModal">Image</li>
-              <li><a href="#">Text</a></li>
-              <li><a href="#">Code</a></li>
-            </ul>
-          <% end %>
           <a class="close-reveal-modal">&#215;</a>
-        </div>
       </div> <!-- /panel -->
     </fieldset>
   <!-- nav buttons -->
@@ -48,13 +37,7 @@
       </div>
   <% end %> <!-- /form_for -->
 
-        <% if project.id %>
-          <div class="row">
-            <%= render :partial => 'chunks/describer_form',locals: {project: project} %>
-            <%= render :partial => 'chunks/code_snippet_form',locals: {project: project} %>
-            <%= render :partial => 'chunks/image_form',locals: {project: project} %>
-          </div>
-        <% end %>
+
   <!-- Delete project button - must be OUTSIDE the form_for
   so it doesn't overwrite the add/edit button functionality -->
       <% if project.id %>

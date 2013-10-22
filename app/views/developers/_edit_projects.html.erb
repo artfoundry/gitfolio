@@ -8,8 +8,8 @@
   <% if @projects.count < 5 %>
     <div class="row">
      <div class="large-12 columns">
-        <div data-reveal-id=<%= "project-form-modal-#{@new_project.id}" %> class="button radius">Add Project</div>
-        <%= render 'projects/form', project: @new_project %>
+        <div data-reveal-id=<%= "project-form-modal-repo" %> class="button radius">Add Repository</div>
+        <%= render 'developers/repositories' %>
       </div> <!-- /large-12 col -->
     </div> <!-- /row col -->
   <% else %>

@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
     developer.projects.create(
       title: params[:name],
       url: params[:url],
-      description: params[:description]
+      markdown: params[:markdown]
       )
 
     redirect_to developer_path(developer)
@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
   private
 
   def valid_params(params)
-    params[:project].permit(:title, :url, :description, :role)
+    params[:project].permit(:title, :url, :markdown, :role)
   end
 
 end
