@@ -1,6 +1,5 @@
 <!-- Project form modal -->
 <div id="project-form-modal-<%= project.id %>" class="reveal-modal modal-pos">
-  <% if @projects.count < 5 %>
     <%= form_for project do |f| %>
       <fieldset>
         <div class="panel">
@@ -46,10 +45,6 @@
         <% end %>
       </div> <!-- /row -->
     <a class="close-reveal-modal">&#215;</a>
-
-  <% else %>
-    <h4 class="subheader">You have created the maximum number of projects allowed.<br>Delete a project in order to add a new one.</h4>
-  <% end %>
 </div> <!-- End reveal modal -->
 
 <!-- /modal -->
