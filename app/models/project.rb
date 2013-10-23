@@ -14,4 +14,7 @@ class Project < ActiveRecord::Base
 	return_number_of_forks(self.developer.github_username, self.title)
   end
 
+  def get_stars
+	return_number_of_stars(self.developer.github_username, self.title)
+  end
 end
