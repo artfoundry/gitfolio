@@ -8,7 +8,6 @@
 
 body {
   background-color: #1B4D54;
-  /*background-image: url("bg.jpg");*/
 }
 
 .container {
@@ -115,10 +114,6 @@ body {
   border-width: 3px 0px 3px 0px;
   border-bottom-color: #A85A1B;
   border-top-color: #48939E;
-}
-
-#html-container {
-  text-align: center;
 }
 
 textarea { height: auto; }

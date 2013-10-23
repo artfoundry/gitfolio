@@ -1,50 +1,60 @@
 <!-- Project form modal -->
 <div id="project-form-modal-<%= project.id %>" class="reveal-modal modal-pos">
-    <%= form_for project do |f| %>
-      <fieldset>
-        <div class="panel">
-          <h5>Project</h5>
-          <div class="row">
-            <div class="large-4 columns">
-              <%= f.label :title, 'Project Name' %>
-              <%= f.text_field :title %>
-            </div> <!-- /large-4 col -->
-            <div class="large-4 columns">
-              <%= f.label :url, 'Project URL' %>
-              <%= f.text_field :url, placeholder: "http://www.url.com" %>
-            </div> <!-- /large-4 col -->
+  <%= form_for project do |f| %>
+    <fieldset>
+      <div class="panel">
+        <h5 class="subheader">Project</h5>
+        <div class="row">
+          <div class="large-4 columns">
+            <%= f.label :title, 'Project Name', class: 'subheader' %>
+            <%= f.text_field :title %>
+          </div> <!-- /large-4 col -->
+          <div class="large-4 columns">
+            <%= f.label :url, 'Project URL', class: 'subheader' %>
+            <%= f.text_field :url, placeholder: "http://www.url.com" %>
+          </div> <!-- /large-4 col -->
 
-            <div class="large-4 columns">
-              <%= f.label :role, 'Project Role' %>
-              <%= f.text_field :role %>
-            </div> <!-- /large-4 col -->
-          </div> <!-- /row -->
+          <div class="large-4 columns">
+            <%= f.label :role, 'Project Role', class: 'subheader' %>
+            <%= f.text_field :role %>
+          </div> <!-- /large-4 col -->
+        </div> <!-- /row -->
 
-          <div class="row">
-            <div class="large-12 columns">
-              <%= f.label :markdown, 'Project Description' %>
-              <%= f.text_area :markdown, :class => 'project_markdown', :size => "30x10" %>
-            </div><!-- /large-12 col -->
-          </div> <!-- /row -->
-        </div> <!-- /panel -->
-      </fieldset>
-    <!-- nav buttons -->
-      <div class="row">
-        <div class="large-4 columns">
-          <%= f.submit project.id ? "Edit Project": "Add Project", class: "button" %>
+        <div class="row">
+          <div class="large-12 columns">
+            <%= f.label :markdown, 'Project Description', class: 'subheader' %>
+            <%= f.text_area :markdown, :class => 'project_markdown', :size => "30x10" %>
+          </div><!-- /large-12 col -->
+        </div> <!-- /row -->
+      </div> <!-- /panel -->
+    </fieldset>
+  <!-- nav buttons -->
+    <div class="row">
+      <div class="large-4 columns">
+        <%= f.submit project.id ? "Edit Project": "Add Project", class: "button" %>
+      </div>
+
+  <% end %> <!-- /form_for -->
+
+  <!-- Delete project button - must be OUTSIDE the form_for
+  so it doesn't overwrite the add/edit button functionality -->
+      <% if project.id %>
+        <div class="large-4 large-offset-4 columns">
+          <%= button_to "Delete Project", project_path(project.id), method: :delete, class: "button" %>
         </div>
+      <% end %>
+    </div> <!-- /row -->
 
-    <% end %> <!-- /form_for -->
-
-    <!-- Delete project button - must be OUTSIDE the form_for
-    so it doesn't overwrite the add/edit button functionality -->
-        <% if project.id %>
-          <div class="large-4 large-offset-4 columns">
-            <%= button_to "Delete Project", project_path(project.id), method: :delete, class: "button" %>
-          </div>
-        <% end %>
-      </div> <!-- /row -->
+  <div class="row">
+    <div class="large-12 columns subheader">
+      Description markdown preview:
+    </div>
+  </div>
+  <div class="panel">
+    <div class="row">
+      <div class="large-12 columns html-output"></div>
+    </div>
     <a class="close-reveal-modal">&#215;</a>
-</div> <!-- End reveal modal -->
+  </div>
 
-<!-- /modal -->
+</div> <!-- End reveal modal -->
