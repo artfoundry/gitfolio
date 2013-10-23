@@ -53,9 +53,11 @@ module GitHubDataLoader
     }
   end
 
-  def return_author_commits(username, repo, owner=username)
-    uri_string = "https://api.github.com/repos/#{username}/#{repo}/commits?author=#{owner}"
-    make_api_call(uri_string)
+  def return_author_commit_number(owner, repo, author)
+    uri_string = "https://api.github.com/repos/#{owner}/#{repo}/stats/contributors"
+    commiters = make_api_call(uri_string)
+    contributor = commiters.select {|commiter| commiter["author"]["login"] == author}
+    contributor[0]["total"]
   end
 
   def return_all_file_names_and_paths(username, repo, path = nil, files = {})
