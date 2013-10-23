@@ -1,3 +1,5 @@
+require 'modules/githubdataloader'
+
 class SessionsController < ApplicationController
   include GitHubDataLoader
   def create
