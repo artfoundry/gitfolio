@@ -51,6 +51,12 @@ describe "GitHubDataLoader" do
     end
   end
 
+  describe "return number of watchers"do
+    it "returns the number of watchers on a repository" do
+      watchers = GitHubDataLoader.return_number_of_watchers("dmill", "cereal_racer")
+      expect(watchers).to eq(0)
+    end
+  end
   describe "return_all_file_names_and_paths" do
     it "returns a hash cotaining all files in a repository" do
       all_files = GitHubDataLoader.return_all_file_names_and_paths("dmill", "gitfolio")
