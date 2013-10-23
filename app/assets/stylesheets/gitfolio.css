@@ -29,13 +29,7 @@ body {
 }
 
 .project {
-  background-color: #A1714B;
-  border-width: 3px;
-  border-style: groove;
-  border-radius: 5px;
-  border-color: #1B4D54;
-  height: 30px;
-  margin: 10px 10px 10px 10px;
+  background-color: #875024;
 }
 
 .pro-background {
@@ -65,10 +59,7 @@ body {
 }
 
 .text-vcenter {
-  /*height: 100%;*/
   margin-top: 15%;
-  /*line-height: 40px;*/
-  /*vertical-align: middle;*/
 }
 
 .modal-pos {
@@ -103,6 +94,13 @@ body {
 .nav-bar-color {
   background-color: #875024;
   opacity: 0.8;
+}
+
+.highlights {
+  border-style: solid;
+  border-width: 2px 0px 2px 0px;
+  border-bottom-color: #A85A1B;
+  border-top-color: #48939E;
 }
 
 #html-container {
