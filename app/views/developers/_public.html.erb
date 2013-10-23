@@ -21,27 +21,25 @@
   </div>
 
   <!-- Projects -->
-  <% @projects.each_with_index do |project, i| %>
+  <% @html_projects.each_with_index do |project, i| %>
     <a name="<%= i %>"></a>
-    <div class="panel pro-fill<%= i % 2 %>">
+    <div class="panel pro-fill<%= i % 2 %> highlights">
       <div class="row">
     <!-- Project title -->
         <div class="large-12 columns">
           <h1 class="subheader">
-            <a href=<%= project.url %> >
-              <%= project.title %>
-            </a>
+            Project: <a href=<%= project.url %>><%= project.title %></a>
           </h1>
-          <h6><%= project.get_stars %> stars</h6>
-          <h6><%= project.get_forks %> forks</h6>
-          <h6><%= project.watchers %> watchers</h6>
-          <h4>My Commits:<%= project.commits %></h4>
+          <h4 class="subheader">My commits to this project:<%= project.commits %></h4>
+          <h5 class="subheader"><%= project.get_stars %> stars</h5>
+          <h5 class="subheader"><%= project.get_forks %> forks</h5>
+          <h5 class="subheader"><%= project.watchers %> watchers</h5>
         </div> <!-- /large-12 col -->
       </div> <!-- /row -->
     <!-- Feature chunk -->
       <div class="row">
         <div class="large-12 columns">
-          <div class="panel shadow-panel">
+          <div class="panel project">
             <%= project.markdown %>
           </div>
         </div> <!-- /large-12 col -->
