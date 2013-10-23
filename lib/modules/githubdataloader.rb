@@ -57,6 +57,7 @@ module GitHubDataLoader
     uri_string = "https://api.github.com/repos/#{owner}/#{repo}/stats/contributors"
     commiters = make_api_call(uri_string)
     contributor = commiters.select {|commiter| commiter["author"]["login"] == author}
+    return 0 if contributor[0] == nil
     contributor[0]["total"]
   end
 
@@ -108,3 +109,5 @@ module GitHubDataLoader
   end
 
 end
+
+p GitHubDataLoader.return_author_commit_number("dmill", "ar-student-schema", "dmill")
