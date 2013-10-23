@@ -1,11 +1,25 @@
 <div class="panel pro-background">
 
-  <div class="row">
-    <div class="large-4 large-offset-4 columns vcenter">
-      <h2><%= @developer.name %></h2>
-      <h4><%= @developer.profession %></h4>
+<!-- Profile -->
+  <div class="panel">
+    <div class="row">
+      <div class="small-6 large-6 columns" style="position: relative;">
+        <div class="avatar" style="top: -15px;">
+          <% if @developer.github_avatar == nil %>
+            <%= image_tag "logo.png", {class: "avatar-image"}%>
+          <% else %>
+            <%= image_tag @developer.github_avatar, {class: "avatar-image"} %>
+          <% end %>
+        </div>
+      </div>
+      <div class="small-6 large-6 columns">
+        <h3 class="subheader"><%= @developer.name %></h3>
+        <h5 class="subheader"><%= @developer.profession %></h5>
+        <h5 class="subheader"><% link_to "@developer.email" %>Contact me</h5>
+      </div>
     </div>
   </div>
+
   <!-- Projects -->
   <% @projects.each_with_index do |project, i| %>
     <a name="<%= i %>"></a>
@@ -13,7 +27,7 @@
       <div class="row">
     <!-- Project title -->
         <div class="large-12 columns">
-          <h1>
+          <h1 class="subheader">
             <a href=<%= project.url %> >
               <%= project.title %>
             </a>
@@ -64,26 +78,5 @@
       </div> <!-- /row -->
     </div> <!-- /panel pro-border -->
   <% end %> <!-- projects.each -->
-
-<!-- Profile -->
-  <a name="profile"></a>
-  <div class="panel pro-border">
-    <div class="row">
-      <div class="small-8 large-6 columns pro-info">
-        <h3><%= @developer.name %></h3>
-        <h5><%= @developer.profession %></h5>
-        <h5>Location: <%= @developer.location %></h5>
-        <h5>Github: <%= @developer.github_username %></h5>
-        <h5>Github URL: <%= @developer.github_url %></h5>
-        <h5><% link_to "@developer.email" %>Contact me</h5>
-      </div>
-
-      <div class="small-4 large-6 columns" style="position: relative;">
-        <div class="avatar" style="position: absolute; right: 0px;">
-          <img class="avatar-image" src="http://www.empireonline.com/images/uploaded/chuck-norris-uzis.jpg">
-        </div>
-      </div>
-    </div>
-  </div>
 
 </div> <!-- /panel -->
