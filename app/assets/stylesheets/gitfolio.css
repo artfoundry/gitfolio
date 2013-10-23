@@ -29,14 +29,12 @@ body {
 }
 
 .project {
-  background-color: #2ba6cb;
+  background-color: #A1714B;
   border-width: 3px;
   border-style: groove;
   border-radius: 5px;
-  border-color: #2284a1;
-  vertical-align: middle;
-  min-height: 40px;
-  line-height: 20px;
+  border-color: #1B4D54;
+  height: 30px;
   margin: 10px 10px 10px 10px;
 }
 
@@ -57,6 +55,20 @@ body {
 
 .profile {
   background-color: #48939E;
+  min-height: 170px;
+}
+
+.profile-center{
+  left: 10%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.text-vcenter {
+  /*height: 100%;*/
+  margin-top: 15%;
+  /*line-height: 40px;*/
+  /*vertical-align: middle;*/
 }
 
 .shadow-panel {
