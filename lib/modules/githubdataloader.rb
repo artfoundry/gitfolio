@@ -88,6 +88,10 @@ module GitHubDataLoader
     stars = repo_page.css("a.social-count.js-social-count").inner_html.gsub(/\n/,'').gsub(' ', '')
   end
 
+  def return_number_of_forks(username, repo)
+    repo_page = Nokogiri::HTML(open("https://www.github.com/#{username}/#{repo}"))
+    forks = repo_page.css("a.social-count")[1].inner_html.gsub(/\n/,'').gsub(' ', '')
+  end
   def return_file_content(username, repo, path)
    uri_string = "https://api.github.com/repos/#{username}/#{repo}/contents/#{path}"
    file_json = make_api_call(uri_string)
@@ -114,5 +118,4 @@ module GitHubDataLoader
     readme != "" ? readme : "README.md not found in repository. feel free to add your own description!"
 
   end
-
 end
