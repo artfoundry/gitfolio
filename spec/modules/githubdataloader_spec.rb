@@ -38,7 +38,7 @@ describe "GitHubDataLoader" do
   end
 
   describe "return_file_content" do
-    xit "returns a string equivalent to the content of the specified file" do
+    it "returns a string equivalent to the content of the specified file" do
       file_content = GitHubDataLoader.return_file_content("dmill", "gitfolio", "spec/modules/githubdataloader_spec.rb")
       expect(file_content).to eq(File.read(__FILE__))
     end
