@@ -11,8 +11,8 @@
     <div class="large-5 small-5 columns"></div>
     <div class="small-3 large-3 small-centered large-centered columns vcenter">
       <% if @projects.count < 5 %>
-        <div data-reveal-id=<%= "project-form-modal-#{@new_project.id}" %> class="button radius">Add Project</div>
-        <%= render 'projects/form', project: @new_project %>
+        <div data-reveal-id="project-form-modal-repo" class="button radius">Add Repository</div>
+        <%= render 'developers/repositories' %>
       <% else %>
         <h4 class="subheader">You have created the maximum number of projects allowed</h4>
       <% end %>

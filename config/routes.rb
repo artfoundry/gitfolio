@@ -6,7 +6,7 @@ Gitfolio::Application.routes.draw do
   resources :projects, only: [:create, :update, :destroy]
   resources :chunks, only: [:create]
 
-
+  post '/convert', :to => 'markdown#convert'
   post '/project_from_repo', :to => 'projects#create_from_repo'
   post '/developers/repositories', :to => 'developers#repositories'
   get '/auth/:provider/callback', :to => 'sessions#create'

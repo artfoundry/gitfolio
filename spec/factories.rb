@@ -16,7 +16,7 @@ FactoryGirl.define do
     title { Faker::Company.catch_phrase }
     url {Faker::Internet.url }
     role { Faker::Company.bs}
-    description {Faker::Lorem.paragraph}
+    markdown {Faker::Lorem.paragraph}
     developer
   end
 

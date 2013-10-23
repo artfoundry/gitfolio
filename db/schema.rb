@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022183007) do
+ActiveRecord::Schema.define(version: 20131020015228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,19 +22,6 @@ ActiveRecord::Schema.define(version: 20131022183007) do
     t.integer  "developer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "chunks", force: true do |t|
-    t.string   "title"
-    t.string   "type"
-    t.string   "url"
-    t.text     "description"
-    t.text     "textfield"
-    t.text     "code"
-    t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "source"
   end
 
   create_table "developers", force: true do |t|
@@ -52,7 +39,7 @@ ActiveRecord::Schema.define(version: 20131022183007) do
   create_table "projects", force: true do |t|
     t.string   "title"
     t.string   "url"
-    t.text     "description"
+    t.text     "markdown"
     t.integer  "developer_id"
     t.datetime "created_at"
     t.datetime "updated_at"

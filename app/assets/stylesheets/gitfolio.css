@@ -100,3 +100,9 @@ body {
   background-color: #875024;
   opacity: 0.8;
 }
+
+#html-container {
+  text-align: center;
+}
+
+textarea { height: auto; }
