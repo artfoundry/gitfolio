@@ -1,4 +1,6 @@
 require 'uri'
+require 'open-uri'
+require 'nokogiri'
 require 'net/http'
 require 'json'
 require 'base64'
@@ -79,6 +81,11 @@ module GitHubDataLoader
   def return_number_of_watchers(username, repo)
     uri_string = "https://api.github.com/repos/#{username}/#{repo}"
     make_api_call(uri_string)["watchers"]
+  end
+
+  def return_number_of_stars(username,repo)
+    repo_page = Nokogiri::HTML(open("https://www.github.com/#{username}/#{repo}"))
+    stars = repo_page.css("a.social-count.js-social-count").inner_html.gsub(/\n/,'').gsub(' ', '')
   end
 
   def return_file_content(username, repo, path)

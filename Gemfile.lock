@@ -186,6 +186,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   json
+  nokogiri (~> 1.6.0)
   omniauth
   omniauth-github
   pg
