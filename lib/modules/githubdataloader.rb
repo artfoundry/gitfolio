@@ -89,4 +89,8 @@ module GitHubDataLoader
 
   end
 
+  def return_readme(username, repo)
+    return_file_content(username, repo, 'README.md')
+  end
+
 end
