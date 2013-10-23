@@ -1,7 +1,11 @@
+require 'modules/markdowner'
+
 class DevelopersController < ApplicationController
+  include Markdowner
+
   def show
     @developer = Developer.find_by github_username: params[:id]
-    @projects = @developer.projects
+    @projects = @developer.projects.each {|project| project.markdown = markdown_convert(project.markdown).html_safe}
     @new_project = Project.new
     @repositories = @developer.return_all_repos(params[:id])
   end
