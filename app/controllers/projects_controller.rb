@@ -22,14 +22,17 @@ class ProjectsController < ApplicationController
   end
 
   def create_from_repo
-
+    watchers = return_number_of_watchers(params[:owner], params[:name])
+    commits = return_author_commit_number(params[:owner], params[:name], params[:owner])
     readme = return_readme(params[:owner], params[:name])
 
     developer = Developer.find_by github_username: params[:owner]
     developer.projects.create(
       title: params[:name],
       url: params[:url],
-      markdown: readme
+      markdown: readme,
+      watchers: watchers,
+      commits: commits
       )
 
     redirect_to developer_path(developer)
