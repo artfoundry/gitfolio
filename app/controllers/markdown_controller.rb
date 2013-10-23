@@ -1,7 +1,7 @@
 require 'modules/markdowner'
 
 class MarkdownController < ApplicationController
-  include MarkDowner
+  include Markdowner
 
   def convert
 
