@@ -1,21 +1,21 @@
 <div id="project-form-modal-repo" class="reveal-modal modal-pos">
 
-<% @repositories.each do |repo| %>
-  <div class="row">
-    <div class="small-8 columns">
-      <a href=<%=repo[:url]%> ><%= repo[:name] %></a><br>
-      <% if repo[:description] != "" %>
-        <%= repo[:description] %>
-      <% else %>
-        <em>no descrption given</em>
-      <% end %>
+  <% @repositories.each do |repo| %>
+    <div class="row">
+      <div class="small-8 columns">
+        <a href=<%=repo[:url]%> ><%= repo[:name] %></a><br>
+        <% if repo[:description] != "" %>
+          <%= repo[:description] %>
+        <% else %>
+          <em>No descrption given</em>
+        <% end %>
+      </div>
+      <div class="small-4 columns">
+        <%= button_to "Add to projects", project_from_repo_path(repo), class: "tiny button" %>
+      </div>
     </div>
-    <div class="small-4 columns">
-      <%= button_to "Add to projects", project_from_repo_path(repo), class: "tiny button" %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 
-<a class="close-reveal-modal">&#215;</a>
+  <a class="close-reveal-modal">&#215;</a>
 
 </div>

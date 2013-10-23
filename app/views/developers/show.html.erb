@@ -1,6 +1,54 @@
-<%= render partial: 'static/navbar' %>
+<!-- Navbar -->
+<div class="contain-to-grid sticky shadow-panel nav-bar-color highlights">
+  <nav class="top-bar nav-bar-color">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <a href="/"><%= image_tag "logo.png", {class: "logo-sml"} %></a>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-<% if session[:developer_id] != @developer.id %>
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+        <ul class="left">
+          <li>
+            <% if session[:developer_id] != nil %>
+              <a href="#" data-reveal-id="project-form-modal-repo">Add Repository</a>
+            <% end %>
+          </li>
+          <% @projects.each_with_index do |project, i| %>
+            <li class="divider"></li>
+            <li>
+              <% if session[:developer_id] == nil %>
+                <a href="#<%= i %>">Project: <%= project.title %></a>
+              <% else %>
+                <a href="#" data-reveal-id="project-form-modal-<%= project.id %>">Project: <%= project.title %></a>
+                <%= render 'developers/repositories' %>
+                <%= render 'projects/form', project: project %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+
+      <!-- Right Nav Section -->
+      <% if session[:developer_id] != nil %>
+        <ul class="right">
+          <li>
+            <a href="#" data-reveal-id="editDeveloperModal">Edit Profile</a>
+            <%= render 'developers/edit_profile' %>
+          </li>
+          <li class="divider"></li>
+          <li><%= link_to "Logout", logout_path %></li>
+        </ul>
+      <% end %>
+    </section>
+  </nav>
+</div>
+<!-- End Navbar -->
+
+<!-- Projects list page -->
 <div class="pro_container">
   <div class="pro_vcenter">
     <div class="row">
@@ -10,49 +58,3 @@
     </div> <!-- row -->
   </div> <!-- pro_vcenter -->
 </div> <!-- pro_container -->
-
-<% else %>
-<div class="pro_container">
-  <div class="pro_vcenter">
-    <div class="row">
-      <div class="small-12 large-12 small-centered columns">
-
-          <!-- Only show public tab if the user is logged in -->
-          <% if session[:developer_id] == @developer.id %>
-          <div class="section-container tabs" data-section="tabs">
-
-            <!-- Public tab -->
-            <section class="active">
-              <p class="title" data-section-title><a href="#panel1">Public</a></p>
-              <div class="content" data-section-content>
-                <%= render partial: 'public' %>
-              </div>
-            </section>
-            <!-- End Public tab -->
-
-            <!-- Edit Projects tab -->
-            <section>
-              <p class="title" data-section-title><a href="#panel2">Projects</a></p>
-              <div class="content" data-section-content>
-                <%= render partial: 'edit_projects' %>
-              </div>
-            </section>
-            <!-- End Edit Projects tab -->
-
-            <!-- Edit Profile tab -->
-            <section>
-              <p class="title" data-section-title><a href="#panel3">Profile</a></p>
-              <div class="content" data-section-content>
-                <%= render partial: 'edit_profile' %>
-              </div>
-            </section>
-            <!-- End Edit Profile tab -->
-
-          </div> <!-- section-container tabs -->
-          <% end %> <!-- if session -->
-      </div> <!-- small-8 large-10 -->
-    </div> <!-- row -->
-  </div> <!-- pro_vcenter -->
-</div> <!-- pro_container -->
-
-<% end %>

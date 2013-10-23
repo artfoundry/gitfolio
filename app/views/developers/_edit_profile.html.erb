@@ -1,72 +1,35 @@
-<div class="panel profile">
-  <div class="row">
-    <div class="large-5 small-5 columns"></div>
-    <div class="small-3 large-3 small-centered large-centered columns vcenter">
-      <h4 class="subheader">My Personal Info</h4>
-    </div> <!-- small-3 large-3 -->
-    <div class="large-4 small-4 columns"></div>
-  </div> <!-- /row col -->
-
-  <div class="row">
-    <div class="small-6 large-6 columns">
-      <div class="avatar" style="top: 30px;">
-        <% if @developer.github_avatar == nil %>
-          <%= image_tag "logo.png", {class: "avatar-image"}%>
-        <% else %>
-          <%= image_tag @developer.github_avatar, {class: "avatar-image"} %>
-        <% end %>
+<!-- Profile form modal -->
+<div id="editDeveloperModal" class="reveal-modal modal-pos">
+  <%= form_for @developer do |f| %>
+    <fieldset>
+      <legend>Personal Information</legend>
+      <div class="row">
+        <div class="large-6 columns">
+          <%= f.label :name, 'Name' %>
+          <%= f.text_field :name %>
+        </div> <!-- /large-6 col -->
+         <div class="large-6 columns">
+          <%= f.label :profession, 'Profession' %>
+          <%= f.text_field :profession %>
+        </div> <!-- /large-6 col -->
+      </div>
+      <div class="row">
+        <div class="large-6 columns">
+          <%= f.label :email, 'Email' %>
+          <%= f.text_field :email %>
+        </div> <!-- /large-6 col -->
+        <div class="large-6 columns">
+          <%= f.label :location, 'Location' %>
+          <%= f.text_field :location %>
+        </div> <!-- /large-6 col -->
+      </div> <!-- /row -->
+    </fieldset>
+  <!-- nav buttons -->
+    <div class="row">
+      <div class="small-4 columns">
+        <%= f.submit "Submit", class: "button" %>
       </div>
     </div>
-    <div class="small-6 large-6 columns">
-      <h5 class="subheader">Name: <%= @developer[:name] %></h5>
-      <h5 class="subheader">Profession: <%= @developer[:profession] %></h5>
-      <h5 class="subheader">Email: <%= @developer[:email] %></h5>
-      <h5 class="subheader">Location: <%= @developer[:location] %></h5>
-      <h5 class="subheader">Github Username: <%= @developer[:github_username] %></h5>
-      <h5 class="subheader">Github URL: <%= @developer[:github_url] %></h5>
-    </div> <!-- /large-6 col -->
-  </div> <!-- /row col -->
-
-  <div class="row">
-    <div class="large-5 small-5 columns"></div>
-    <div class="small-3 large-3 small-centered large-centered columns vcenter">
-      <a href="#" data-reveal-id="editDeveloperModal" class="button">Edit Profile</a>
-    </div> <!-- /large-3 small-3 col -->
-  </div> <!-- row -->
-  
-<!-- Profile form modal -->
-  <div id="editDeveloperModal" class="reveal-modal modal-pos">
-    <%= form_for @developer do |f| %>
-      <fieldset>
-        <legend>Personal Information</legend>
-        <div class="row">
-          <div class="large-6 columns">
-            <%= f.label :name, 'Name' %>
-            <%= f.text_field :name %>
-          </div> <!-- /large-6 col -->
-           <div class="large-6 columns">
-            <%= f.label :profession, 'Profession' %>
-            <%= f.text_field :profession %>
-          </div> <!-- /large-6 col -->
-        </div>
-        <div class="row">
-          <div class="large-6 columns">
-            <%= f.label :email, 'Email' %>
-            <%= f.text_field :email %>
-          </div> <!-- /large-6 col -->
-          <div class="large-6 columns">
-            <%= f.label :location, 'Location' %>
-            <%= f.text_field :location %>
-          </div> <!-- /large-6 col -->
-        </div> <!-- /row -->
-      </fieldset>
-    <!-- nav buttons -->
-      <div class="row">
-        <div class="small-4 columns">
-          <%= f.submit "Submit", class: "button" %>
-        </div>
-      </div>
-      <a class="close-reveal-modal">&#215;</a>
-    <% end %> <!-- /form_for -->
-  </div> <!-- /modal-12 col -->
-</div> <!-- /panel -->
+    <a class="close-reveal-modal">&#215;</a>
+  <% end %> <!-- /form_for -->
+</div> <!-- /modal-12 col -->
