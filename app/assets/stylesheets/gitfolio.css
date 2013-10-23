@@ -1,6 +1,7 @@
 
 body {
-  background-color: #2ba6cb;
+  background-color: #1B4D54;
+  /*background-image: url("bg.jpg");*/
 }
 
 .container {
@@ -28,34 +29,46 @@ body {
 }
 
 .project {
-  background-color: #2ba6cb;
+  background-color: #A1714B;
   border-width: 3px;
   border-style: groove;
   border-radius: 5px;
-  border-color: #2284a1;
-  vertical-align: middle;
-  min-height: 40px;
-  line-height: 20px;
+  border-color: #1B4D54;
+  height: 30px;
   margin: 10px 10px 10px 10px;
 }
 
-.pro-info {
-  margin-left: 20px;
-  max-width: 200px;
-}
-
-
 .pro-background {
    padding: 0px 0px 0px 0px;
+   background-color: #875024;
 }
+
 .pro-fill0 {
-  background-color: rgb(210,230,230);
-  margin: 0px 0px 0px 0px;
+  background-color: #A1714B;
+  margin: 0px 0px 5px 0px;
 }
 
 .pro-fill1 {
-  background-color: rgb(230,250,250);
-  margin: 0px 0px 0px 0px;
+  background-color: #48939E;
+  margin: 0px 0px 5px 0px;
+}
+
+.profile {
+  background-color: #48939E;
+  min-height: 170px;
+}
+
+.profile-center{
+  left: 10%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.text-vcenter {
+  /*height: 100%;*/
+  margin-top: 15%;
+  /*line-height: 40px;*/
+  /*vertical-align: middle;*/
 }
 
 .shadow-panel {
@@ -66,25 +79,26 @@ body {
 
 .avatar {
   position: absolute;
-  background-color: #2284a1;
-  border-width: 3px;
-  border-style: outset;
-  border-radius: 3px;
-  border-color: #2284a1;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
-  margin: 10px 30px 10px 10px;
+  right: 0px;
 }
 
 .avatar-image {
   max-width: 200px;
   max-height: 150px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: #1B4D54;
 }
 
-.nav-bar {
-  border-style: solid;
-  border-width: 1px;
-  background-color: black;
-  box-shadow: 5px 5px 5px #888888;
+.logo-sml {
+  height: 45px;
+  width: 45px;
+}
+
+.nav-bar-color {
+  background-color: #875024;
+  opacity: 0.8;
 }
 
 #html-container {

@@ -5,9 +5,7 @@
   <div class="pro_vcenter">
     <div class="row">
       <div class="small-12 large-12 small-centered columns">
-        <div class="shadow-panel">
           <%= render partial: 'public' %>
-        </div> <!-- shadowpanel -->
       </div> <!-- small-8 large-10 -->
     </div> <!-- row -->
   </div> <!-- pro_vcenter -->
@@ -18,7 +16,6 @@
   <div class="pro_vcenter">
     <div class="row">
       <div class="small-12 large-12 small-centered columns">
-        <div class="shadow-panel">
 
           <!-- Only show public tab if the user is logged in -->
           <% if session[:developer_id] == @developer.id %>
@@ -53,7 +50,6 @@
 
           </div> <!-- section-container tabs -->
           <% end %> <!-- if session -->
-        </div> <!-- shadowpanel -->
       </div> <!-- small-8 large-10 -->
     </div> <!-- row -->
   </div> <!-- pro_vcenter -->
