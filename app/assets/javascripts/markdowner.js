@@ -3,10 +3,6 @@ function bindFormEvent() {
 
 }
 
-function raorao() {
-  console.log("this is working")
-}
-
 function htmlConvert(event) {
   var markdown = $( event.target ).val()
   $.ajax( {
@@ -20,7 +16,6 @@ function htmlConvert(event) {
 function bindHTML(response) {
   var htmlOutput = response.responseText
   $("#html-output").html(htmlOutput)
-
 }
 
 $(bindFormEvent)
