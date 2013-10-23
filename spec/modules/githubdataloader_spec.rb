@@ -38,16 +38,16 @@ describe "GitHubDataLoader" do
   end
 
   describe "return_file_content" do
-    it "returns a string equivalent to the content of the specified file" do
+    xit "returns a string equivalent to the content of the specified file" do
       file_content = GitHubDataLoader.return_file_content("dmill", "gitfolio", "spec/modules/githubdataloader_spec.rb")
       expect(file_content).to eq(File.read(__FILE__))
     end
   end
 
-  describe "return_author_commits" do
-    it "returns all of the commits for an author on a given repo" do
-      commits = GitHubDataLoader.return_author_commits("dmill", "gitfolio")
-      expect(commits[7]["sha"]).not_to be_empty
+  describe "return_author_commit_number" do
+    it "returns the number of commits an author has made on a repo" do
+      commit_number = GitHubDataLoader.return_author_commit_number("dmill", "cereal_racer", "dmill")
+      expect(commit_number).to eq(1)
     end
   end
 
