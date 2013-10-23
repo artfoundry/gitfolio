@@ -4,7 +4,7 @@ module MarkDowner
 
   extend self
 
-  def convert(html_text)
+  def markdown_convert(html_text)
     BlueCloth.new(html_text).to_html
   end
 
@@ -19,6 +19,6 @@ A Second Level Header
 
 expected_output = "<h1>A First Level Header</h1>\n\n<h2>A Second Level Header</h2>"
 
-p MarkDowner.convert(test_input) == expected_output
+p MarkDowner.markdown_convert(test_input) == expected_output
 
 
