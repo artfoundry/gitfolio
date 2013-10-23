@@ -90,3 +90,5 @@ body {
 #html-container {
   text-align: center;
 }
+
+textarea { height: auto; }
