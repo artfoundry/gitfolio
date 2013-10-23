@@ -1,6 +1,6 @@
 function bindFormEvent() {
-  $('#project_markdown').on('keydown',htmlConvert)
-
+  $('.project_markdown').on('keydown',htmlConvert)
+  $('.reveal-modal').on('open',clearHTML)
 }
 
 function htmlConvert(event) {
@@ -15,8 +15,11 @@ function htmlConvert(event) {
 
 function bindHTML(response) {
   var htmlOutput = response.responseText
-  $("#html-output").html(htmlOutput)
+  $(".html-output").html(htmlOutput)
+}
+
+function clearHTML() {
+  $(".html-output").empty()
 }
 
 $(bindFormEvent)
-
