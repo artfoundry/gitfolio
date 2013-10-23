@@ -90,7 +90,11 @@ module GitHubDataLoader
   end
 
   def return_readme(username, repo)
-    return_file_content(username, repo, 'README.md')
+    readme = return_file_content(username, repo, 'README.md')
+    readme != "" ? readme : "README.md not found in repository. feel free to add your own description!"
+
   end
 
 end
+
+p GitHubDataLoader.return_readme('raorao','javascript_sudoku')
