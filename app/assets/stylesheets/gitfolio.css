@@ -1,9 +1,9 @@
 /* base color palette:
-#1B4D54: dark green
-#875024: dark red-brown
-#48939E: light green
-#A1714B: muted orange
-#A85A1B: bright orange
+#1B4D54: dark green (background, image border)
+#875024: dark red-brown (navbar, code boxes, project dividers)
+#48939E: light green (profile background, alternating project background, top highlight)
+#A1714B: muted orange (alternating project background)
+#A85A1B: bright orange (bottom highlight)
 */
 
 body {
