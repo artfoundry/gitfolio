@@ -1,5 +1,5 @@
 function bindFormEvent() {
-  $('#project_markdown').on('keypress',htmlConvert)
+  $('#project_markdown').on('keydown',htmlConvert)
 
 }
 
