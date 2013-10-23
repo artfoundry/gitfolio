@@ -1,4 +1,7 @@
+require 'modules/githubdataloader'
+
 class ProjectsController < ApplicationController
+  include GitHubDataLoader
 
   def create
     project = Project.new(valid_params(params))
@@ -20,11 +23,13 @@ class ProjectsController < ApplicationController
 
   def create_from_repo
 
+    readme = return_readme(params[:owner], params[:name])
+
     developer = Developer.find_by github_username: params[:owner]
     developer.projects.create(
       title: params[:name],
       url: params[:url],
-      markdown: params[:markdown]
+      markdown: readme
       )
 
     redirect_to developer_path(developer)

@@ -19,6 +19,6 @@ A Second Level Header
 
 expected_output = "<h1>A First Level Header</h1>\n\n<h2>A Second Level Header</h2>"
 
-p Markdowner.markdown_convert(test_input) == expected_output
+Markdowner.markdown_convert(test_input) == expected_output
 
 

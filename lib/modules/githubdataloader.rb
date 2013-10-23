@@ -100,4 +100,11 @@ module GitHubDataLoader
     JSON.parse(http.request(request).body)
 
   end
+
+  def return_readme(username, repo)
+    readme = return_file_content(username, repo, 'README.md')
+    readme != "" ? readme : "README.md not found in repository. feel free to add your own description!"
+
+  end
+
 end
