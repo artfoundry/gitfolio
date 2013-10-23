@@ -96,5 +96,3 @@ module GitHubDataLoader
   end
 
 end
-
-p GitHubDataLoader.return_readme('raorao','javascript_sudoku')
