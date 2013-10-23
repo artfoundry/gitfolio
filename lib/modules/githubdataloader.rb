@@ -83,9 +83,9 @@ module GitHubDataLoader
   def return_file_content(username, repo, path)
    uri_string = "https://api.github.com/repos/#{username}/#{repo}/contents/#{path}"
    file_json = make_api_call(uri_string)
-
+   return nil if file_json['message'] == "Not Found"
    encoded_file_content = file_json["content"]
-   decoded_file_content = Base64.decode64(encoded_file_content)
+   decoded_file_content = Base64.decode64(encoded_file_content) 
   end
 
   def make_api_call(uri_string)
