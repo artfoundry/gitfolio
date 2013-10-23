@@ -53,6 +53,13 @@ module GitHubDataLoader
     }
   end
 
+  def return_author_commit_number(owner, repo, author)
+    uri_string = "https://api.github.com/repos/#{owner}/#{repo}/stats/contributors"
+    commiters = make_api_call(uri_string)
+    contributor = commiters.select {|commiter| commiter["author"]["login"] == author}
+    contributor[0]["total"]
+  end
+
   def return_all_file_names_and_paths(username, repo, path = nil, files = {})
     uri_string = "https://api.github.com/repos/#{username}/#{repo}/contents/#{path}"
     root_directory = make_api_call(uri_string)
@@ -66,6 +73,11 @@ module GitHubDataLoader
 
     end
     files
+  end
+
+  def return_number_of_watchers(username, repo)
+    uri_string = "https://api.github.com/repos/#{username}/#{repo}"
+    make_api_call(uri_string)["watchers"]
   end
 
   def return_file_content(username, repo, path)

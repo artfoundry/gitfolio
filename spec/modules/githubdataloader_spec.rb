@@ -44,6 +44,19 @@ describe "GitHubDataLoader" do
     end
   end
 
+  describe "return_author_commit_number" do
+    it "returns the number of commits an author has made on a repo" do
+      commit_number = GitHubDataLoader.return_author_commit_number("dmill", "cereal_racer", "dmill")
+      expect(commit_number).to eq(1)
+    end
+  end
+
+  describe "return number of watchers"do
+    it "returns the number of watchers on a repository" do
+      watchers = GitHubDataLoader.return_number_of_watchers("dmill", "cereal_racer")
+      expect(watchers).to eq(0)
+    end
+  end
   describe "return_all_file_names_and_paths" do
     it "returns a hash cotaining all files in a repository" do
       all_files = GitHubDataLoader.return_all_file_names_and_paths("dmill", "gitfolio")
