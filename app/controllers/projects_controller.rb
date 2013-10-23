@@ -29,6 +29,7 @@ class ProjectsController < ApplicationController
     developer = Developer.find_by github_username: params[:owner]
     developer.projects.create(
       title: params[:name],
+      repo_name: params[:name],
       url: params[:url],
       markdown: readme,
       watchers: watchers,
