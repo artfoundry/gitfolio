@@ -8,7 +8,6 @@
 
 body {
   background-color: #33302E;
-  /*background-image: url("bg.jpg");*/
 }
 
 .container {
@@ -22,6 +21,11 @@ body {
   top: 50%;
   width: 100%;
   margin: auto;
+}
+
+.login {
+  background-color: #875024;
+  border-radius: 5px;
 }
 
 .pro_container {
@@ -50,13 +54,14 @@ body {
 }
 
 .pro-fill1 {
-  background-color: #48939E;
+  background-color: #A99;
   margin: 0px 0px 5px 0px;
 }
 
 .profile {
   background-color: #48939E;
   min-height: 170px;
+  border-radius: 5px;
 }
 
 .profile-center{
@@ -103,7 +108,6 @@ body {
   background-color: #1B4D54;
   opacity: 0.8;
 }
-
 
 #developer-name {
   font-size: 200%;
