@@ -162,3 +162,7 @@ div {
 }
 
 textarea { height: auto; }
+
+.button {
+  background-color: #1B4D54;
+}
