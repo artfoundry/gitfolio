@@ -23,9 +23,9 @@
             <li class="divider"></li>
             <li>
               <% if session[:developer_id] != @developer.id %>
-                <a href="#<%= i %>">Project: <%= project.title %></a>
+                <a href="#<%= i %>"><%= project.short_title %></a>
               <% else %>
-                <a href="#" data-reveal-id="project-form-modal-<%= project.id %>">Project: <%= project.title %></a>
+                <a href="#" data-reveal-id="project-form-modal-<%= project.id %>"><%= project.short_title %></a>
 
                 <%= render 'projects/form', project: project %>
               <% end %>
