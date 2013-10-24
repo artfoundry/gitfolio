@@ -154,6 +154,11 @@ body {
 }
 
 #repos {
-  color: white;
+  color: black;
 }
+
+div {
+  border-radius: 10px;
+}
+
 textarea { height: auto; }
