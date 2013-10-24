@@ -6,6 +6,8 @@ class DevelopersController < ApplicationController
   def show
     @developer = Developer.find_by github_username: params[:id]
 
+    @developer.page_requests.create(ip: request.remote_ip, visitor_id: session[:developer_id]) if session[:developer_id] != @developer.id
+
     @projects = @developer.projects
     @html_projects = @projects.each {|project| project.markdown = markdown_convert(project.markdown).html_safe }
     @projects.reload

@@ -6,6 +6,7 @@ class Developer < ActiveRecord::Base
   validates_uniqueness_of :github_username
   has_many :projects
   has_many :authorizations
+  has_many :page_requests
 
   def to_param
     github_username
