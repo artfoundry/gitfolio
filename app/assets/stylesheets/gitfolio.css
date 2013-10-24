@@ -12,7 +12,7 @@ body {
 
 .container {
   position: relative;
-  height: 300px;
+  margin-top: 10%;
 }
 
 .vcenter {

@@ -1,16 +1,10 @@
 <div class="container">
   <div class="vcenter">
     <div class="row">
-      <div class="small-8 small-centered columns">
-        <div class="panel shadow-panel login highlights">
-            <h1 id="login-header">Welcome to Epatomic</h1>
-            <h3 id="login-message">Please log in with your Github account</h3>
+      <div class="small-12 columns">
             <% if session[:developer_id] == nil %>
             	<%= render partial: 'sessions/sign_in' %>
-            <% else %>
-            	<%= render partial: 'sessions/sign_out' %>
             <% end %>
-          </div> <!-- panel -->
       </div> <!-- small-8 -->
     </div> <!-- row -->
   </div> <!-- vcenter -->
