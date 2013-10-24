@@ -16,6 +16,7 @@
           <li>
             <% if session[:developer_id] == @developer.id %>
               <a href="#" data-reveal-id="project-form-modal-repo">Add Repository</a>
+              <%= render 'developers/repositories' %>
             <% end %>
           </li>
           <% @projects.each_with_index do |project, i| %>
@@ -25,7 +26,7 @@
                 <a href="#<%= i %>">Project: <%= project.title %></a>
               <% else %>
                 <a href="#" data-reveal-id="project-form-modal-<%= project.id %>">Project: <%= project.title %></a>
-                <%= render 'developers/repositories' %>
+
                 <%= render 'projects/form', project: project %>
               <% end %>
             </li>
