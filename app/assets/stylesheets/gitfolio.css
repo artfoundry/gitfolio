@@ -24,7 +24,8 @@ body {
 }
 
 .login {
-  background-color: #875024;
+  color: black;
+  background-color: #48939E;
   border-radius: 5px;
 }
 
@@ -133,7 +134,7 @@ body {
 
 .project-title {
   color: black;
-  font-size: 250%;
+  font-size: 200%;
   text-align: center;
 }
 
@@ -142,4 +143,17 @@ body {
   top: 2.5em;
 }
 
+#login-header {
+  color: white;
+  font-size: 400%;
+}
+
+#login-message {
+  color: white;
+  font-size: 600%;
+}
+
+#repos {
+  color: white;
+}
 textarea { height: auto; }
