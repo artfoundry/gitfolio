@@ -3,7 +3,7 @@
 <!-- Profile -->
   <div class="panel profile">
     <div class="row">
-      <div class="small-6 large-6 columns" style="position: relative;">
+      <div id="profile-photo" class="small-6 large-6 columns" style="position: relative;">
         <div class="avatar" style="top: -15px;">
           <% if @developer.github_avatar == nil %>
             <%= image_tag "logo.png", {class: "avatar-image"}%>
