@@ -80,12 +80,12 @@ body {
 
 .modal-repo-fill0 {
   background-color: #D7DADB;
-  height: 80px;
+  min-height: 80px;
 }
 
 .modal-repo-fill1 {
   background-color: #FFFFFF;
-  height: 80px;
+  min-height: 80px;
 }
 
 .modal-repo-text {
