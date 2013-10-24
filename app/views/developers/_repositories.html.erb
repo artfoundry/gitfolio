@@ -3,7 +3,7 @@
   <% if @projects.count < 5 %>
       <div class="row">
         <div class="small-12 columns center">
-          <h3 class="subheader">Repositories</h3>
+          <h3 id="repos" class="subheader">Repositories</h3>
         </div>
       </div>
     <% @repositories.each_with_index do |repo, i| %>
@@ -17,7 +17,7 @@
           <% end %>
         </div>
         <div class="small-6 columns modal-repo-fill<%= i % 2 %>">
-          <%= button_to "Add to projects", project_from_repo_path(repo), class: "small button", style: "margin-top: 25px; margin-left: 30%;" %>
+          <%= button_to "Add to projects", project_from_repo_path(repo), class: "small button radius", style: "margin-top: 25px; margin-left: 30%;" %>
         </div>
       </div>
     <% end %>
