@@ -55,12 +55,12 @@ body {
 }
 
 .pro-fill1 {
-  background-color: #48939E;
+  background-color: #AEC3C6;
   margin: 0px 0px 5px 0px;
 }
 
 .profile {
-  background-color: #48939E;
+  background-color: #AEC3C6;
   min-height: 170px;
   border-radius: 5px;
 }
@@ -154,6 +154,15 @@ body {
 }
 
 #repos {
-  color: white;
+  color: black;
 }
+
+div {
+  border-radius: 10px;
+}
+
 textarea { height: auto; }
+
+.button {
+  background-color: #1B4D54;
+}
