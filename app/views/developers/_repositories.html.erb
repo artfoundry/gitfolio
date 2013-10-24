@@ -7,8 +7,8 @@
         </div>
       </div>
     <% @repositories.each_with_index do |repo, i| %>
-      <div class="row">
-        <div class="small-6 columns modal-repo-fill<%= i % 2 %>">
+      <div class="row modal-repo-fill<%= i % 2 %>">
+        <div class="small-6 columns">
           <h5 class="subheader modal-repo-text"><a href=<%=repo[:url]%> ><%= repo[:name] %></a></h5>
           <% if repo[:description] != "" %>
             <h6 class="subheader modal-repo-text"><%= repo[:description] %></h6>
@@ -16,6 +16,7 @@
             <h6 class="subheader modal-repo-text"><em>No descrption given</em></h6>
           <% end %>
         </div>
+
         <div class="small-6 columns modal-repo-fill<%= i % 2 %>">
           <%= button_to "Add to projects", project_from_repo_path(repo), class: "small button radius", style: "margin-top: 25px; margin-left: 30%;" %>
         </div>
