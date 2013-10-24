@@ -7,7 +7,7 @@
 */
 
 body {
-  background-color: #1B4D54;
+  background-color: #33302E;
 }
 
 .container {
@@ -40,17 +40,16 @@ body {
 }
 
 .project {
-  background-color: #CCC;
-  border-radius: 5px;
+  background-color: #FFFFFF;
 }
 
 .pro-background {
    padding: 0px 0px 0px 0px;
-   background-color: #1B4D54;
+   background-color: #D7DADB;
 }
 
 .pro-fill0 {
-  background-color: #9AA;
+  background-color: #D7DADB;
   margin: 0px 0px 5px 0px;
 }
 
@@ -88,6 +87,7 @@ body {
 .avatar {
   position: absolute;
   right: 0px;
+  top: 100px;
 }
 
 .avatar-image {
@@ -105,15 +105,27 @@ body {
 }
 
 .nav-bar-color {
-  background-color: #875024;
+  background-color: #1B4D54;
   opacity: 0.8;
 }
 
-.highlights {
-  border-style: solid;
-  border-width: 3px 0px 3px 0px;
-  border-bottom-color: #A85A1B;
-  border-top-color: #48939E;
+#developer-name {
+  font-size: 200%;
 }
 
+#html-container {
+  text-align: center;
+}
+
+.project-title {
+  color: black;
+  font-size: 250%;
+  text-align: center;
+}
+
+#profile-photo {
+  position: relative;
+  top: 2.5em;
+
+}
 textarea { height: auto; }
