@@ -34,16 +34,17 @@
         </ul>
 
       <!-- Right Nav Section -->
-      <% if session[:developer_id] != nil %>
         <ul class="right">
+        <% if session[:developer_id] == @developer.id %>
           <li>
             <a href="#" data-reveal-id="editDeveloperModal">Edit Profile</a>
             <%= render 'developers/edit_profile' %>
           </li>
+        <% end %>
           <li class="divider"></li>
           <li><%= link_to "Logout", logout_path %></li>
         </ul>
-      <% end %>
+
     </section>
   </nav>
 </div>
