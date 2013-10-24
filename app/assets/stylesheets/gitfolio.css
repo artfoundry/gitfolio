@@ -78,6 +78,20 @@ body {
   top: 50px;
 }
 
+.modal-repo-fill0 {
+  background-color: #D7DADB;
+  height: 80px;
+}
+
+.modal-repo-fill1 {
+  background-color: #FFFFFF;
+  height: 80px;
+}
+
+.modal-repo-text {
+  margin-left: 30%;
+}
+
 .shadow-panel {
   -moz-box-shadow: 10px 10px 10px rgba(0,0,0,0.7);
   -webkit-box-shadow: 10px 10px 10px rgba(0,0,0,0.7);
@@ -113,7 +127,7 @@ body {
   font-size: 200%;
 }
 
-#html-container {
+.center {
   text-align: center;
 }
 
@@ -126,6 +140,6 @@ body {
 #profile-photo {
   position: relative;
   top: 2.5em;
-
 }
+
 textarea { height: auto; }
