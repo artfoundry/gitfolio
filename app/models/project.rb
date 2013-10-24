@@ -13,4 +13,9 @@ class Project < ActiveRecord::Base
   def get_stars
 	return_number_of_stars(self.developer.github_username, self.repo_name)
   end
+
+  def short_title
+    return title[0..10] + "..." if title && title.length > 10
+    title if title
+  end
 end
