@@ -8,7 +8,6 @@
 
 body {
   background-color: #1B4D54;
-  /*background-image: url("bg.jpg");*/
 }
 
 .container {
@@ -24,6 +23,11 @@ body {
   margin: auto;
 }
 
+.login {
+  background-color: #875024;
+  border-radius: 5px;
+}
+
 .pro_container {
   position: relative;
 }
@@ -36,27 +40,29 @@ body {
 }
 
 .project {
-  background-color: #875024;
+  background-color: #CCC;
+  border-radius: 5px;
 }
 
 .pro-background {
    padding: 0px 0px 0px 0px;
-   background-color: #875024;
+   background-color: #1B4D54;
 }
 
 .pro-fill0 {
-  background-color: #A1714B;
+  background-color: #9AA;
   margin: 0px 0px 5px 0px;
 }
 
 .pro-fill1 {
-  background-color: #48939E;
+  background-color: #A99;
   margin: 0px 0px 5px 0px;
 }
 
 .profile {
   background-color: #48939E;
   min-height: 170px;
+  border-radius: 5px;
 }
 
 .profile-center{
@@ -105,13 +111,9 @@ body {
 
 .highlights {
   border-style: solid;
-  border-width: 2px 0px 2px 0px;
+  border-width: 3px 0px 3px 0px;
   border-bottom-color: #A85A1B;
   border-top-color: #48939E;
-}
-
-#html-container {
-  text-align: center;
 }
 
 textarea { height: auto; }
