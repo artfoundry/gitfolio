@@ -1,8 +1,9 @@
 <!-- Profile form modal -->
-<div id="editDeveloperModal" class="reveal-modal modal-pos">
+<div id="editDeveloperModal" class="reveal-modal medium modal-pos">
+  <div class="panel">
   <%= form_for @developer do |f| %>
-    <fieldset>
-      <legend>Personal Information</legend>
+    <div>
+      <h3 class="subheader">Personal Information</h3>
       <div class="row">
         <div class="large-4 columns">
           <%= f.label :name, 'Name' %>
@@ -17,7 +18,7 @@
           <%= f.text_field :email %>
         </div> <!-- /large-4 col -->
       </div>
-    </fieldset>
+    </div>
   <!-- nav buttons -->
     <div class="row">
       <div class="small-4 columns">
