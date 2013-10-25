@@ -31,9 +31,9 @@
             <a class="project-title" href=<%= project.url %>><%= project.title %></a>
           </h1>
           <h4 class="subheader">My commits to this project: <%= project.commits %></h4>
-          <h5 class="subheader"><i class="general foundicon-star"></i> <%= project.get_stars %> stars</h5>
-          <h5 class="subheader"><i class="general foundicon-add-doc"></i> <%= project.get_forks %> forks</h5>
-          <h5 class="subheader"><i class="general foundicon-address-book"></i> <%= project.watchers %> watchers</h5>
+          <h5 class="subheader"><%= image_tag "star.png", {height: 20, width: 20} %> <%= project.get_stars %> stars</h5>
+          <h5 class="subheader"><%= image_tag "fork.png", {height: 20, width: 20} %> <%= project.get_forks %> forks</h5>
+          <h5 class="subheader"><%= image_tag "watcher.png", {height: 20, width: 20} %> <%= project.watchers %> watchers</h5>
         </div> <!-- /large-12 col -->
       </div> <!-- /row -->
     <!-- Feature chunk -->
