@@ -1,12 +1,16 @@
 require 'modules/markdowner'
+require 'modules/geolocator'
 
 class DevelopersController < ApplicationController
   include Markdowner
+  include Geolocator
 
   def show
     @developer = Developer.find_by github_username: params[:id]
-    @viewers = "some viewers"
+
     @developer.page_requests.create(ip: request.remote_ip, visitor_id: session[:developer_id]) if session[:developer_id] != @developer.id
+    requests = @developer.page_requests.map { |request| request.ip }
+    @viewers = return_location_data(requests)
 
     @projects = @developer.projects
     @html_projects = @projects.each {|project| project.markdown = markdown_convert(project.markdown).html_safe }
