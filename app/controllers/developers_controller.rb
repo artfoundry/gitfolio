@@ -5,7 +5,7 @@ class DevelopersController < ApplicationController
 
   def show
     @developer = Developer.find_by github_username: params[:id]
-
+    @viewers = "some viewers"
     @developer.page_requests.create(ip: request.remote_ip, visitor_id: session[:developer_id]) if session[:developer_id] != @developer.id
 
     @projects = @developer.projects

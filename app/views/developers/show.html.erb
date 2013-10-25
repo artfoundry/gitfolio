@@ -19,6 +19,12 @@
               <%= render 'developers/repositories' %>
             <% end %>
           </li>
+          <li>
+            <% if session[:developer_id] == @developer.id %>
+              <a href="#" data-reveal-id="viewer-modal">Viewers</a>
+              <%= render 'developers/viewers', viewers: @viewers %>
+            <% end %>
+          </li>
           <% @projects.each_with_index do |project, i| %>
             <li class="divider"></li>
             <li>
